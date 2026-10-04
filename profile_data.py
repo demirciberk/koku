@@ -6,13 +6,13 @@ from collections import Counter
 
 import pandas as pd
 
-# fra_cleaned.csv: ';' separated, decimal comma. Try utf-8 first; latin-1 only if it fails.
+# fra_cleaned.csv: ';' separated, decimal comma. Try utf-8 first; cp1252 only if it fails.
 try:
     c = pd.read_csv("data/fra_cleaned.csv", sep=";", encoding="utf-8", decimal=",")
     enc = "utf-8"
 except UnicodeDecodeError:
-    c = pd.read_csv("data/fra_cleaned.csv", sep=";", encoding="latin-1", decimal=",")
-    enc = "latin-1"
+    c = pd.read_csv("data/fra_cleaned.csv", sep=";", encoding="cp1252", decimal=",")
+    enc = "cp1252"
 p = pd.read_csv("data/fra_perfumes.csv")
 
 print(f"fra_cleaned: {len(c)} rows, encoding={enc}, unique urls={c.url.nunique()}")
