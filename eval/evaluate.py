@@ -28,11 +28,19 @@ def score(ranking: list[int], relevant: set[int], k: int = K) -> dict:
     return {"p@10": sum(hits) / k, "ndcg@10": dcg / idcg if idcg else 0.0, "mrr@10": 1 / (first + 1) if first is not None else 0.0}
 
 
-def evaluate(run: dict, qrels: dict) -> dict:
+def mean(per: list[dict]) -> dict:
+    return {m: round(sum(p[m] for p in per) / len(per), 4) for m in per[0]}
+
+
+def evaluate(run: dict, qrels: dict, types: dict | None = None) -> dict:
+    """Overall metrics, plus one row per query type when `types` (id -> type) is given."""
     missing = set(qrels) - set(run)
     assert not missing, f"run is missing queries: {sorted(missing)[:5]}"
-    per = [score(run[q]["ranking"], set(qrels[q]["relevant"])) for q in qrels]
-    return {m: round(sum(p[m] for p in per) / len(per), 4) for m in per[0]}
+    per = {q: score(run[q]["ranking"], set(qrels[q]["relevant"])) for q in qrels}
+    out = {"all": mean(list(per.values()))}
+    for t in sorted(set((types or {}).values())):
+        out[t] = mean([s for q, s in per.items() if types[q] == t])
+    return out
 
 
 def popularity_baseline(path: str) -> None:
@@ -60,4 +68,6 @@ if __name__ == "__main__":
         import os
         os.makedirs("runs", exist_ok=True)
         popularity_baseline(path)
-    print(path, evaluate(load(path), load("eval/qrels.jsonl")))
+    types = {q["id"]: q["type"] for q in load("eval/queries.jsonl").values()}
+    for name, metrics in evaluate(load(path), load("eval/qrels.jsonl"), types).items():
+        print(f"{path} {name:9s}", metrics)
