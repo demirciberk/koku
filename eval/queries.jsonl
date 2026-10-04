@@ -1,200 +1,183 @@
-{"id": "q001", "query": "yazın ofiste sürebileceğim ferah, narenciyeli bir erkek parfümü", "all_accords": ["citrus"], "any_accords": ["fresh", "aromatic", "fresh spicy"], "gender": ["men"], "lead_accords": ["citrus"]}
-{"id": "q002", "query": "vanilyalı ve tatlı ama boğmayan bir kadın parfümü", "all_accords": ["vanilla", "sweet"], "no_accords": ["oud", "leather", "animalic"], "gender": ["women"], "lead_accords": ["vanilla"]}
-{"id": "q003", "query": "deri ve tütün kokan, kışın akşam sürülecek bir koku", "all_accords": ["leather", "tobacco"]}
-{"id": "q004", "query": "denizi hatırlatan tuzlu, ferah bir parfüm", "any_accords": ["marine", "aquatic"], "all_accords": ["salty"]}
-{"id": "q005", "query": "ud içeren ama çok ağır olmayan, gülle yumuşatılmış bir şey", "all_accords": ["oud", "rose"]}
-{"id": "q006", "query": "kahve notası olan tatlı bir gece parfümü", "notes": ["coffee"], "all_accords": ["sweet"]}
-{"id": "q007", "query": "pudralı iris kokan zarif bir kadın parfümü", "all_accords": ["iris", "powdery"], "gender": ["women"]}
-{"id": "q008", "query": "tütsü kokan, kilise havası veren bir parfüm", "any_notes": ["incense", "olibanum"], "all_accords": ["smoky"]}
-{"id": "q009", "query": "lavantalı, berber dükkânı gibi temiz kokan erkek parfümü", "all_accords": ["lavender", "aromatic"], "gender": ["men"]}
-{"id": "q010", "query": "hindistan cevizli yazlık, tatil kokan bir parfüm", "all_accords": ["coconut"], "any_accords": ["tropical", "sweet"]}
-{"id": "q011", "query": "taze kesilmiş çimen gibi yeşil kokan bir şey", "all_accords": ["green"], "any_notes": ["green notes", "grass", "galbanum", "violet leaf"]}
-{"id": "q012", "query": "yasemin ağırlıklı, tatlı olmayan beyaz çiçekli bir kadın parfümü", "all_accords": ["white floral"], "notes": ["jasmine"], "gender": ["women"], "lead_accords": ["white floral"], "no_accords": ["sweet", "vanilla"]}
-{"id": "q013", "query": "sümbülteber kokan iddialı bir parfüm", "all_accords": ["tuberose"]}
-{"id": "q014", "query": "karamel ve vanilya içeren, gurme tarzı unisex bir koku", "all_accords": ["caramel", "vanilla"], "gender": ["unisex"]}
-{"id": "q015", "query": "çikolata ya da kakao notası olan bir parfüm", "any_accords": ["cacao", "chocolate"]}
-{"id": "q016", "query": "dumanlı, odunsu ve biraz da deri kokan bir erkek parfümü", "all_accords": ["smoky", "woody", "leather"], "gender": ["men"]}
-{"id": "q017", "query": "yağmur sonrası toprak kokusu gibi bir parfüm", "all_accords": ["earthy"], "any_accords": ["green", "mossy", "woody"]}
-{"id": "q018", "query": "sabun gibi temiz, aldehitli klasik bir kadın parfümü", "all_accords": ["aldehydic"], "any_accords": ["powdery", "soapy"], "gender": ["women"]}
-{"id": "q019", "query": "viski ya da rom kokan sıcak bir parfüm", "any_accords": ["whiskey", "rum"]}
-{"id": "q020", "query": "bal kokulu, sıcak ve biraz hayvansı bir parfüm", "all_accords": ["honey", "animalic"]}
-{"id": "q021", "query": "badem kokan pudralı tatlı bir şey", "all_accords": ["almond"], "any_accords": ["powdery", "sweet"]}
-{"id": "q022", "query": "vetiverli, kuru ve odunsu bir erkek parfümü", "notes": ["vetiver"], "all_accords": ["woody", "earthy"], "gender": ["men"]}
-{"id": "q023", "query": "gül ve paçuli bir arada, koyu tonlu bir parfüm", "all_accords": ["rose", "patchouli"]}
-{"id": "q024", "query": "menekşe kokan pudralı bir parfüm", "all_accords": ["violet", "powdery"]}
-{"id": "q025", "query": "tarçınlı, kışlık baharatlı bir koku", "all_accords": ["cinnamon", "warm spicy"]}
-{"id": "q026", "query": "kiraz kokan tatlı bir parfüm", "all_accords": ["cherry", "sweet"]}
-{"id": "q027", "query": "ozon gibi, havalandırılmış çamaşır ferahlığında bir koku", "all_accords": ["ozonic"], "any_accords": ["fresh", "aquatic", "musky"]}
-{"id": "q028", "query": "misk ağırlıklı, ten kokusu gibi sade bir parfüm", "all_accords": ["musky"], "no_accords": ["sweet", "fruity", "vanilla"], "lead_accords": ["musky"]}
-{"id": "q029", "query": "greyfurtlu, ekşimsi narenciye kokan bir şey", "notes": ["grapefruit"], "all_accords": ["citrus"], "lead_accords": ["citrus"]}
-{"id": "q030", "query": "mürdüm eriği ve tütün içeren bir parfüm", "notes": ["plum", "tobacco"]}
-{"id": "q031", "query": "çay notası olan sakin, hafif bir parfüm", "any_notes": ["tea", "green tea", "black tea"], "no_accords": ["oud", "leather", "animalic"]}
-{"id": "q032", "query": "incir kokan yeşil bir parfüm", "notes": ["fig"], "all_accords": ["green"]}
-{"id": "q033", "query": "safranlı ve ud içeren doğu tarzı bir parfüm", "notes": ["saffron"], "all_accords": ["oud"]}
-{"id": "q034", "query": "armut kokan meyveli bir kadın parfümü", "notes": ["pear"], "all_accords": ["fruity"], "gender": ["women"]}
-{"id": "q035", "query": "nane ferahlığında bir erkek parfümü", "notes": ["mint"], "any_accords": ["fresh", "aromatic", "fresh spicy"], "gender": ["men"]}
-{"id": "q036", "query": "zencefilli, baharatlı ve ferah bir koku", "notes": ["ginger"], "all_accords": ["fresh spicy"]}
-{"id": "q037", "query": "kakule notası öne çıkan bir parfüm", "notes": ["cardamom"], "any_accords": ["fresh spicy", "warm spicy", "aromatic"], "lead_accords": ["fresh spicy"]}
-{"id": "q038", "query": "portakal çiçeği kokan beyaz çiçekli bir parfüm", "notes": ["orange blossom"], "all_accords": ["white floral"], "lead_accords": ["white floral"]}
-{"id": "q039", "query": "şakayık ve frezya içeren hafif çiçeksi bir kadın parfümü", "notes": ["peony", "freesia"], "gender": ["women"]}
-{"id": "q040", "query": "mango ya da çarkıfelek meyvesi gibi tropik bir koku", "any_notes": ["mango", "passionfruit"], "all_accords": ["tropical"]}
-{"id": "q041", "query": "şeftalili, meyveli ve tatlı bir parfüm", "notes": ["peach"], "all_accords": ["fruity", "sweet"]}
-{"id": "q042", "query": "ahududu ve gül içeren bir parfüm", "notes": ["raspberry", "rose"]}
-{"id": "q043", "query": "frenk üzümü kokan meyveli bir şey", "any_notes": ["black currant", "cassis"], "all_accords": ["fruity"], "lead_accords": ["fruity"]}
-{"id": "q044", "query": "sandal ağacı ağırlıklı kremsi bir parfüm", "notes": ["sandalwood"], "all_accords": ["woody"], "any_accords": ["lactonic", "powdery"], "lead_accords": ["woody"]}
-{"id": "q045", "query": "sedir ağacı kokan kuru odunsu bir erkek parfümü", "notes": ["cedar"], "all_accords": ["woody"], "no_accords": ["sweet", "fruity"], "gender": ["men"], "lead_accords": ["woody"]}
-{"id": "q046", "query": "meşe yosunlu, şipre tarzı eski usul bir parfüm", "any_notes": ["oakmoss", "oak moss"], "all_accords": ["mossy"]}
-{"id": "q047", "query": "anason kokan bir parfüm", "all_accords": ["anis"]}
-{"id": "q048", "query": "tuzlu karamel kokusu", "all_accords": ["caramel", "salty"]}
-{"id": "q049", "query": "mandalina kokan, neşeli bir yazlık parfüm", "any_notes": ["mandarin orange", "tangerine"], "all_accords": ["citrus", "fruity"]}
-{"id": "q050", "query": "ardıç kokan, cin gibi bir parfüm", "any_notes": ["juniper", "juniper berries"], "any_accords": ["aromatic", "fresh spicy", "conifer"]}
-{"id": "q051", "query": "biberiye ve adaçayı içeren aromatik erkek parfümü", "any_notes": ["rosemary", "sage", "clary sage"], "all_accords": ["aromatic"], "gender": ["men"]}
-{"id": "q052", "query": "kaşmir ağacı ve misk ile yumuşak bir ten parfümü", "any_notes": ["cashmere wood", "cashmeran"], "all_accords": ["musky"]}
-{"id": "q053", "query": "ambroksanlı, modern odunsu ve amber bir parfüm", "notes": ["ambroxan"], "all_accords": ["woody", "amber"]}
-{"id": "q054", "query": "tonka fasulyesi ve vanilyalı sıcak bir erkek parfümü", "notes": ["tonka bean"], "all_accords": ["vanilla"], "gender": ["men"]}
-{"id": "q055", "query": "pembe biberli, meyveli ve modern bir kadın parfümü", "notes": ["pink pepper"], "all_accords": ["fruity"], "gender": ["women"]}
-{"id": "q056", "query": "neroli kokan narenciye ve çiçek karışımı bir parfüm", "notes": ["neroli"], "all_accords": ["citrus", "white floral"]}
-{"id": "q057", "query": "manolya kokan çiçeksi bir parfüm", "notes": ["magnolia"], "any_accords": ["floral", "white floral"]}
-{"id": "q058", "query": "gardenya kokan beyaz çiçekli bir parfüm", "notes": ["gardenia"], "all_accords": ["white floral"]}
-{"id": "q059", "query": "ylang ylang ağırlıklı egzotik çiçek kokusu", "notes": ["ylang-ylang"], "any_accords": ["white floral", "tropical"]}
-{"id": "q060", "query": "inci çiçeği kokan bahar havasında bir kadın parfümü", "notes": ["lily-of-the-valley"], "all_accords": ["white floral"], "gender": ["women"]}
-{"id": "q061", "query": "yasemin ve tuberoz ile yoğun beyaz çiçek kokusu", "notes": ["jasmine", "tuberose"], "all_accords": ["white floral"]}
-{"id": "q062", "query": "ıtır çiçeği yani sardunya içeren aromatik bir koku", "notes": ["geranium"], "all_accords": ["aromatic"], "lead_accords": ["aromatic"]}
-{"id": "q063", "query": "karanfil kokan baharatlı çiçeksi bir parfüm", "any_notes": ["carnation", "cloves", "clove"], "all_accords": ["warm spicy", "floral"]}
-{"id": "q064", "query": "osmanthus kokan, şeftalimsi çiçek notası olan bir parfüm", "notes": ["osmanthus"]}
-{"id": "q065", "query": "zambak kokan çiçeksi bir parfüm", "any_notes": ["lily", "water lily"], "any_accords": ["floral", "white floral"]}
-{"id": "q066", "query": "leylak kokan bahar parfümü", "notes": ["lilac"]}
-{"id": "q067", "query": "hanımeli kokan tatlı çiçeksi bir parfüm", "notes": ["honeysuckle"]}
-{"id": "q068", "query": "mimoza kokan pudralı sarı çiçekli bir parfüm", "notes": ["mimosa"], "any_accords": ["powdery", "yellow floral"]}
-{"id": "q069", "query": "nergis kokan yeşil çiçeksi bir parfüm", "notes": ["narcissus"]}
-{"id": "q070", "query": "sümbül kokan bahar parfümü", "notes": ["hyacinth"]}
-{"id": "q071", "query": "lotus çiçeği kokan sulu, hafif bir parfüm", "notes": ["lotus"], "any_accords": ["aquatic", "fresh", "floral"]}
-{"id": "q072", "query": "heliotrop ve badem ile pudralı tatlı bir koku", "notes": ["heliotrope"], "all_accords": ["powdery"]}
-{"id": "q073", "query": "türk gülü içeren bir parfüm", "notes": ["turkish rose"]}
-{"id": "q074", "query": "şam gülü kokan bir parfüm", "notes": ["damask rose"]}
-{"id": "q075", "query": "orkide kokan, gece için tatlı ve çiçeksi bir kadın parfümü", "notes": ["orchid"], "all_accords": ["sweet"], "gender": ["women"]}
-{"id": "q076", "query": "tiare çiçeği ve hindistan cevizi ile plaj kokusu", "notes": ["tiare flower"], "any_accords": ["coconut", "tropical"]}
-{"id": "q077", "query": "frangipani kokan tropik bir parfüm", "notes": ["frangipani"]}
-{"id": "q078", "query": "kudret narı ya da nar kokan meyveli bir parfüm", "notes": ["pomegranate"]}
-{"id": "q079", "query": "liçi ve gül içeren meyveli çiçeksi bir parfüm", "notes": ["litchi", "rose"]}
-{"id": "q080", "query": "yeşil elma kokan ferah bir parfüm", "notes": ["green apple"], "any_accords": ["fresh", "green", "fruity"]}
-{"id": "q081", "query": "kırmızı elma kokan tatlı meyveli bir şey", "notes": ["red apple"], "all_accords": ["fruity"]}
-{"id": "q082", "query": "ananas kokan meyveli bir erkek parfümü", "notes": ["pineapple"], "all_accords": ["fruity"], "gender": ["men"]}
-{"id": "q083", "query": "kavun kokan sulu, ferah bir parfüm", "notes": ["melon"], "any_accords": ["fresh", "aquatic", "fruity"]}
-{"id": "q084", "query": "böğürtlen kokan meyveli bir parfüm", "notes": ["blackberry"]}
-{"id": "q085", "query": "kayısı kokan tatlı meyveli bir parfüm", "notes": ["apricot"], "all_accords": ["fruity"]}
-{"id": "q086", "query": "ravent kokan ekşi ve yeşil bir parfüm", "notes": ["rhubarb"]}
-{"id": "q087", "query": "yuzu kokan japon esintili narenciye parfümü", "notes": ["yuzu"], "all_accords": ["citrus"]}
-{"id": "q088", "query": "kan portakalı içeren narenciye parfümü", "notes": ["blood orange"], "all_accords": ["citrus"]}
-{"id": "q089", "query": "misket limonu kokan ferah bir şey", "notes": ["lime"], "all_accords": ["citrus"]}
-{"id": "q090", "query": "amalfi limonu kokan akdeniz havasında bir parfüm", "notes": ["amalfi lemon"], "all_accords": ["citrus"]}
-{"id": "q091", "query": "petitgrain ve bergamot ile kolonya tarzı ferah bir parfüm", "notes": ["petitgrain", "bergamot"], "all_accords": ["citrus"]}
-{"id": "q092", "query": "acı portakal kokan bir parfüm", "notes": ["bitter orange"]}
-{"id": "q093", "query": "bergamot ağırlıklı, sabah için hafif bir erkek parfümü", "notes": ["bergamot"], "all_accords": ["citrus", "fresh"], "gender": ["men"]}
-{"id": "q094", "query": "limon ve fesleğen içeren yeşil narenciye kokusu", "any_notes": ["lemon", "amalfi lemon"], "notes": ["basil"]}
-{"id": "q095", "query": "kekik kokan aromatik bir parfüm", "notes": ["thyme"], "all_accords": ["aromatic"]}
-{"id": "q096", "query": "pelin otu yani artemisia içeren acımsı aromatik bir parfüm", "notes": ["artemisia"], "all_accords": ["aromatic"]}
-{"id": "q097", "query": "kişniş ve baharat içeren bir erkek parfümü", "notes": ["coriander"], "any_accords": ["fresh spicy", "warm spicy"], "gender": ["men"]}
-{"id": "q098", "query": "muskat cevizi ve tarçın ile sıcak baharatlı bir koku", "notes": ["nutmeg", "cinnamon"], "all_accords": ["warm spicy"]}
-{"id": "q099", "query": "karabiber kokan baharatlı odunsu bir parfüm", "notes": ["black pepper"], "all_accords": ["woody"]}
-{"id": "q100", "query": "yıldız anason içeren baharatlı bir parfüm", "notes": ["star anise"]}
-{"id": "q101", "query": "kimyon ya da karaman kimyonu içeren tuhaf baharatlı bir koku", "any_notes": ["caraway", "cumin"]}
-{"id": "q102", "query": "olibanum ve mür ile reçineli, mistik bir parfüm", "notes": ["myrrh"], "any_notes": ["olibanum", "incense"]}
-{"id": "q103", "query": "labdanum içeren koyu amber bir parfüm", "notes": ["labdanum"], "all_accords": ["amber"]}
-{"id": "q104", "query": "benzoin ve vanilya ile reçineli tatlı bir koku", "notes": ["benzoin"], "all_accords": ["vanilla", "balsamic"]}
-{"id": "q105", "query": "günlük ağacı reçinesi gibi balsamik bir parfüm", "any_notes": ["styrax", "opoponax", "elemi"], "all_accords": ["balsamic"]}
-{"id": "q106", "query": "huş ağacı katranı gibi dumanlı deri kokusu", "notes": ["birch"], "all_accords": ["leather"]}
-{"id": "q107", "query": "süet gibi yumuşak deri kokan bir parfüm", "notes": ["suede"], "all_accords": ["leather"]}
-{"id": "q108", "query": "guaiac ağacı içeren dumanlı odunsu bir parfüm", "notes": ["guaiac wood"], "all_accords": ["woody"]}
-{"id": "q109", "query": "selvi ağacı kokan reçineli yeşil bir parfüm", "notes": ["cypress"]}
-{"id": "q110", "query": "çam ağacı kokan, orman havasında bir parfüm", "any_notes": ["pine", "fir"], "any_accords": ["conifer", "green", "woody", "aromatic"]}
-{"id": "q111", "query": "kehribar yani amber kokan sıcak bir kış parfümü", "all_accords": ["amber", "warm spicy"], "any_accords": ["vanilla", "balsamic"]}
-{"id": "q112", "query": "ambergris içeren tuzlu, tensel bir parfüm", "notes": ["ambergris"], "any_accords": ["salty", "musky", "marine"]}
-{"id": "q113", "query": "civet ya da hayvansı notalar içeren cesur bir parfüm", "any_notes": ["civet", "castoreum"], "all_accords": ["animalic"]}
-{"id": "q114", "query": "beyaz misk kokan temiz, pamuksu bir parfüm", "notes": ["white musk"], "all_accords": ["musky"]}
-{"id": "q115", "query": "ambrette yani misk bamyası içeren tensel bir koku", "any_notes": ["ambrette"]}
-{"id": "q116", "query": "kaşmir ve vanilya ile kış için yumuşak bir kadın parfümü", "any_notes": ["cashmere wood", "cashmeran"], "all_accords": ["vanilla"], "gender": ["women"]}
-{"id": "q117", "query": "pralin kokan, pastane gibi bir parfüm", "notes": ["praline"], "all_accords": ["sweet"]}
-{"id": "q118", "query": "pamuk şeker gibi aşırı tatlı bir parfüm", "any_notes": ["cotton candy", "sugar"], "all_accords": ["sweet"]}
-{"id": "q119", "query": "madagaskar vanilyası içeren bir parfüm", "notes": ["madagascar vanilla"]}
-{"id": "q120", "query": "bourbon vanilyası içeren sıcak bir parfüm", "notes": ["bourbon vanilla"]}
-{"id": "q121", "query": "kakao ve tütün ile koyu, gourmand bir parfüm", "all_accords": ["tobacco"], "any_notes": ["cacao", "cocoa", "chocolate", "dark chocolate"]}
-{"id": "q122", "query": "kahve ve vanilya ile kış için sıcak bir koku", "notes": ["coffee"], "all_accords": ["vanilla"]}
-{"id": "q123", "query": "rom ve vanilya kokan bir parfüm", "all_accords": ["rum"], "any_accords": ["vanilla", "sweet"]}
-{"id": "q124", "query": "kiraz ve badem ile likörlü tatlı bir koku", "all_accords": ["cherry", "almond"]}
-{"id": "q125", "query": "fındık ya da fıstık gibi kuruyemiş kokan bir parfüm", "all_accords": ["nutty"]}
-{"id": "q126", "query": "süt ve krema gibi laktonik, yumuşak bir parfüm", "all_accords": ["lactonic"], "any_accords": ["sweet", "vanilla"]}
-{"id": "q127", "query": "bal ve tütün ile koyu tatlı bir koku", "all_accords": ["honey", "tobacco"]}
-{"id": "q128", "query": "şampanya kokan köpüklü bir parfüm", "all_accords": ["champagne"]}
-{"id": "q129", "query": "metalik, mineral kokan soğuk bir parfüm", "any_accords": ["metallic", "mineral"]}
-{"id": "q130", "query": "kumsal kumu kokan bir parfüm", "any_accords": ["sand", "salty"], "any_notes": ["sand", "sea notes", "salt"]}
-{"id": "q131", "query": "deniz notaları içeren klasik bir erkek okyanus parfümü", "any_notes": ["sea notes", "water notes", "marine notes"], "any_accords": ["aquatic", "marine"], "gender": ["men"]}
-{"id": "q132", "query": "suyun kokusu gibi sulu ve şeffaf bir kadın parfümü", "any_accords": ["aquatic"], "all_accords": ["floral"], "gender": ["women"]}
-{"id": "q133", "query": "yeşil ve aromatik, spor sonrası için ferah bir parfüm", "all_accords": ["green", "aromatic", "fresh spicy"]}
-{"id": "q134", "query": "kamfor gibi serin, mentollü bir parfüm", "any_accords": ["camphor"], "any_notes": ["mint", "peppermint", "eucalyptus"]}
-{"id": "q135", "query": "otsu, bitkisel bir parfüm", "all_accords": ["herbal"]}
-{"id": "q136", "query": "yosun ve odun ile ormanda yürüyüş hissi veren bir parfüm", "all_accords": ["mossy", "woody", "green"]}
-{"id": "q137", "query": "hem gül hem ud içeren unisex bir parfüm", "all_accords": ["rose", "oud"], "gender": ["unisex"]}
-{"id": "q138", "query": "ud ve deri ile ağır, gece için bir erkek parfümü", "all_accords": ["oud", "leather"], "gender": ["men"]}
-{"id": "q139", "query": "ud ve vanilya ile tatlı doğu kokusu", "all_accords": ["oud", "vanilla"]}
-{"id": "q140", "query": "ud ve tütsü içeren mistik bir parfüm", "all_accords": ["oud"], "any_notes": ["incense", "olibanum"]}
-{"id": "q141", "query": "safran ve gül ile doğulu bir kadın parfümü", "notes": ["saffron", "rose"], "gender": ["women"]}
-{"id": "q142", "query": "paçuli ağırlıklı topraksı bir parfüm", "notes": ["patchouli"], "all_accords": ["patchouli", "earthy"]}
-{"id": "q143", "query": "paçuli ve çikolata ile koyu gourmand bir parfüm", "all_accords": ["patchouli"], "any_accords": ["cacao", "chocolate"]}
-{"id": "q144", "query": "lavanta ve vanilya ile tatlı bir fougère", "all_accords": ["lavender", "vanilla"]}
-{"id": "q145", "query": "lavanta ve tonka ile klasik fougère tarzı erkek parfümü", "notes": ["lavender", "tonka bean"], "all_accords": ["aromatic"], "gender": ["men"]}
-{"id": "q146", "query": "iris ve deri ile soğuk, sofistike bir parfüm", "all_accords": ["iris", "leather"]}
-{"id": "q147", "query": "iris ve vanilya ile pudralı tatlı bir koku", "all_accords": ["iris", "vanilla"]}
-{"id": "q148", "query": "menekşe yaprağı kokan yeşil, metalik bir parfüm", "notes": ["violet leaf"], "all_accords": ["green"]}
-{"id": "q149", "query": "kozmetik, ruj kokusu gibi pudralı bir parfüm", "all_accords": ["powdery", "violet"], "any_notes": ["iris", "orris", "orris root"]}
-{"id": "q150", "query": "bebek pudrası gibi temiz ve pudralı bir koku", "all_accords": ["powdery", "musky"], "no_accords": ["oud", "leather", "smoky", "tobacco"], "lead_accords": ["powdery"]}
-{"id": "q151", "query": "çiçeksi aldehitli, retro bir kadın parfümü", "all_accords": ["aldehydic", "floral"], "gender": ["women"]}
-{"id": "q152", "query": "tatlı olmayan, odunsu ve aromatik bir erkek parfümü", "all_accords": ["woody", "aromatic"], "no_accords": ["sweet", "vanilla", "fruity", "caramel"], "gender": ["men"], "lead_accords": ["woody", "aromatic"]}
-{"id": "q153", "query": "çiçeksiz, tamamen odunsu bir unisex parfüm", "all_accords": ["woody"], "no_accords": ["floral", "white floral", "rose", "yellow floral", "sweet"], "gender": ["unisex"], "lead_accords": ["woody"]}
-{"id": "q154", "query": "vanilyasız, ferah ve çiçeksi bir kadın parfümü", "all_accords": ["floral", "fresh"], "no_accords": ["vanilla", "sweet"], "gender": ["women"]}
-{"id": "q155", "query": "meyveli ama tatlı olmayan bir parfüm", "all_accords": ["fruity"], "no_accords": ["sweet", "vanilla", "caramel"], "lead_accords": ["fruity"]}
-{"id": "q156", "query": "gül kokan ama yaşlı kadın parfümü gibi durmayan, meyveli modern bir gül", "all_accords": ["rose", "fruity"], "no_accords": ["powdery", "aldehydic"]}
-{"id": "q157", "query": "beyaz çiçekli ama ağır olmayan, yeşil bir parfüm", "all_accords": ["white floral", "green"]}
-{"id": "q158", "query": "deri kokan ama sert olmayan, çiçekli bir kadın parfümü", "all_accords": ["leather", "floral"], "gender": ["women"]}
-{"id": "q159", "query": "baharatlı ama ferah, sıcak havada sürülebilecek bir erkek parfümü", "all_accords": ["fresh spicy", "citrus"], "no_accords": ["warm spicy", "vanilla", "amber"], "gender": ["men"]}
-{"id": "q160", "query": "tütün kokan ama tatlı olmayan, kuru bir parfüm", "all_accords": ["tobacco"], "no_accords": ["sweet", "vanilla", "honey", "caramel"]}
-{"id": "q161", "query": "ud içermeyen, odunsu ve amber bir erkek parfümü", "all_accords": ["woody", "amber"], "no_accords": ["oud"], "no_notes": ["agarwood"], "gender": ["men"]}
-{"id": "q162", "query": "unisex, odunsu ve misk kokan sakin bir parfüm", "all_accords": ["woody", "musky"], "gender": ["unisex"], "no_accords": ["sweet", "fruity"]}
-{"id": "q163", "query": "unisex narenciye ve aromatik ile kolonya tarzı bir parfüm", "all_accords": ["citrus", "aromatic"], "gender": ["unisex"]}
-{"id": "q164", "query": "unisex dumanlı ve tütsülü bir niş parfüm", "all_accords": ["smoky"], "any_notes": ["incense", "olibanum"], "gender": ["unisex"]}
-{"id": "q165", "query": "kadınlar için deri ve iris içeren zarif bir parfüm", "all_accords": ["leather", "iris"], "gender": ["women"]}
-{"id": "q166", "query": "kadın parfümü, tatlı meyveli ve gourmand, genç bir koku", "all_accords": ["fruity", "sweet", "vanilla"], "gender": ["women"]}
-{"id": "q167", "query": "kadın parfümü, beyaz çiçek ve misk ile temiz bir koku", "all_accords": ["white floral", "musky"], "gender": ["women"]}
-{"id": "q168", "query": "kadınlar için oryantal baharatlı, amber ve vanilyalı bir gece parfümü", "all_accords": ["amber", "vanilla", "warm spicy"], "gender": ["women"]}
-{"id": "q169", "query": "erkekler için deniz ve narenciye içeren yazlık bir parfüm", "all_accords": ["citrus"], "any_accords": ["aquatic", "marine"], "gender": ["men"]}
-{"id": "q170", "query": "erkek parfümü, tatlı, amber ve baharatlı, kulüp için", "all_accords": ["sweet", "amber", "warm spicy"], "gender": ["men"]}
-{"id": "q171", "query": "erkekler için deri ve baharat içeren kışlık bir parfüm", "all_accords": ["leather", "warm spicy"], "gender": ["men"]}
-{"id": "q172", "query": "erkekler için iris içeren pudralı, zarif bir parfüm", "all_accords": ["iris", "powdery"], "gender": ["men"]}
-{"id": "q173", "query": "erkek parfümü, yeşil ve topraksı, vetiverli", "notes": ["vetiver"], "all_accords": ["green", "earthy"], "gender": ["men"]}
-{"id": "q174", "query": "lavanta, misk ve odun ile temiz bir erkek parfümü", "all_accords": ["lavender", "musky", "woody"], "gender": ["men"]}
-{"id": "q175", "query": "kış için tarçın ve vanilya içeren sıcak bir parfüm", "notes": ["cinnamon"], "all_accords": ["vanilla", "warm spicy"]}
-{"id": "q176", "query": "sonbahar için tütün, baharat ve kuru meyve kokan bir parfüm", "all_accords": ["tobacco", "warm spicy", "fruity"]}
-{"id": "q177", "query": "ilkbahar için yeşil ve çiçeksi hafif bir parfüm", "all_accords": ["green", "floral", "fresh"]}
-{"id": "q178", "query": "yaz akşamı için narenciye ve beyaz çiçek karışımı bir parfüm", "all_accords": ["citrus", "white floral"], "any_accords": ["fresh", "musky"]}
-{"id": "q179", "query": "çok sıcak havada bile bunaltmayan sulu, narenciyeli bir koku", "all_accords": ["citrus", "aquatic"], "no_accords": ["vanilla", "amber", "warm spicy"]}
-{"id": "q180", "query": "yatmadan önce sürülecek sakin, lavantalı ve pudralı bir koku", "all_accords": ["lavender", "powdery"]}
-{"id": "q181", "query": "düğün için romantik, gül ve beyaz çiçekli bir kadın parfümü", "all_accords": ["rose", "white floral"], "gender": ["women"]}
-{"id": "q182", "query": "iş görüşmesi için sade, temiz ve odunsu bir erkek parfümü", "all_accords": ["woody", "citrus", "musky"], "no_accords": ["oud", "animalic", "sweet"], "gender": ["men"]}
-{"id": "q183", "query": "spor salonu sonrası için ferah, yeşil ve narenciye kokan bir şey", "all_accords": ["citrus", "green", "fresh"]}
-{"id": "q184", "query": "randevu için tatlı ve baharatlı, dikkat çeken bir erkek parfümü", "all_accords": ["sweet", "warm spicy"], "any_accords": ["vanilla", "amber"], "gender": ["men"]}
-{"id": "q185", "query": "kar yağarken sürülecek amber, reçine ve tütsü kokan bir parfüm", "all_accords": ["amber", "balsamic"], "any_notes": ["incense", "olibanum"]}
-{"id": "q186", "query": "kütüphane gibi kâğıt ve odun kokan bir parfüm", "all_accords": ["woody"], "any_notes": ["paper", "papyrus"]}
-{"id": "q187", "query": "papirüs kokan kuru, yeşil odunsu bir parfüm", "notes": ["papyrus"]}
-{"id": "q188", "query": "kumaş yumuşatıcısı gibi temiz kokan bir parfüm", "all_accords": ["musky", "powdery"], "any_accords": ["aldehydic", "fresh", "soapy"]}
-{"id": "q189", "query": "hamam gibi sabunlu, temiz bir koku", "any_accords": ["soapy", "aldehydic"], "all_accords": ["musky"]}
-{"id": "q190", "query": "yanık şeker gibi karamelize, tatlı bir koku", "all_accords": ["caramel", "sweet"], "any_accords": ["smoky", "warm spicy"]}
-{"id": "q191", "query": "kestane ya da kavrulmuş kuruyemiş gibi sıcak bir parfüm", "all_accords": ["nutty"], "any_accords": ["sweet", "warm spicy"]}
-{"id": "q192", "query": "kahve ve kakule ile arap kahvesi gibi bir koku", "notes": ["coffee", "cardamom"]}
-{"id": "q193", "query": "çay ve bergamot ile earl grey gibi bir parfüm", "any_notes": ["tea", "black tea"], "notes": ["bergamot"]}
-{"id": "q194", "query": "matcha ya da yeşil çay kokan bir parfüm", "any_notes": ["green tea", "matcha"]}
-{"id": "q195", "query": "kola kokan eğlenceli bir parfüm", "any_accords": ["coca-cola"]}
-{"id": "q196", "query": "votka ya da alkollü içki kokan bir parfüm", "any_accords": ["vodka", "alcohol", "wine", "whiskey"]}
-{"id": "q197", "query": "şarap kokan bir parfüm", "any_accords": ["wine"], "any_notes": ["wine", "red wine"]}
-{"id": "q198", "query": "bal mumu kokan sıcak bir parfüm", "any_accords": ["beeswax"]}
-{"id": "q199", "query": "kenevir kokan bir parfüm", "any_accords": ["cannabis"]}
-{"id": "q200", "query": "tuzlu, mineral ve odunsu bir erkek parfümü", "all_accords": ["salty", "woody"], "gender": ["men"]}
+{"id": "q003", "type": "note", "query": "deri ve tütün kokan, kışın akşam sürülecek bir koku", "all_accords": ["leather", "tobacco"]}
+{"id": "q005", "type": "note", "query": "ud içeren ama çok ağır olmayan, gülle yumuşatılmış bir şey", "all_accords": ["oud", "rose"]}
+{"id": "q006", "type": "note", "query": "kahve notası olan tatlı bir gece parfümü", "notes": ["coffee"], "all_accords": ["sweet"]}
+{"id": "q010", "type": "note", "query": "hindistan cevizli yazlık, tatil kokan bir parfüm", "all_accords": ["coconut"], "any_accords": ["tropical", "sweet"]}
+{"id": "q013", "type": "note", "query": "sümbülteber kokan iddialı bir parfüm", "all_accords": ["tuberose"]}
+{"id": "q015", "type": "note", "query": "çikolata ya da kakao notası olan bir parfüm", "any_accords": ["cacao", "chocolate"]}
+{"id": "q019", "type": "note", "query": "viski ya da rom kokan sıcak bir parfüm", "any_accords": ["whiskey", "rum"]}
+{"id": "q020", "type": "note", "query": "bal kokulu, sıcak ve biraz hayvansı bir parfüm", "all_accords": ["honey", "animalic"]}
+{"id": "q021", "type": "note", "query": "badem kokan pudralı tatlı bir şey", "all_accords": ["almond"], "any_accords": ["powdery", "sweet"]}
+{"id": "q022", "type": "note", "query": "vetiverli, kuru ve odunsu bir erkek parfümü", "notes": ["vetiver"], "all_accords": ["woody", "earthy"], "gender": ["men"]}
+{"id": "q023", "type": "note", "query": "gül ve paçuli bir arada, koyu tonlu bir parfüm", "all_accords": ["rose", "patchouli"]}
+{"id": "q025", "type": "note", "query": "tarçınlı, kışlık baharatlı bir koku", "all_accords": ["cinnamon", "warm spicy"]}
+{"id": "q026", "type": "note", "query": "kiraz kokan tatlı bir parfüm", "all_accords": ["cherry", "sweet"]}
+{"id": "q030", "type": "note", "query": "mürdüm eriği ve tütün içeren bir parfüm", "notes": ["plum", "tobacco"]}
+{"id": "q032", "type": "note", "query": "incir kokan yeşil bir parfüm", "notes": ["fig"], "all_accords": ["green"]}
+{"id": "q033", "type": "note", "query": "safranlı ve ud içeren doğu tarzı bir parfüm", "notes": ["saffron"], "all_accords": ["oud"]}
+{"id": "q034", "type": "note", "query": "armut kokan meyveli bir kadın parfümü", "notes": ["pear"], "all_accords": ["fruity"], "gender": ["women"]}
+{"id": "q035", "type": "note", "query": "nane ferahlığında bir erkek parfümü", "notes": ["mint"], "any_accords": ["fresh", "aromatic", "fresh spicy"], "gender": ["men"]}
+{"id": "q036", "type": "note", "query": "zencefilli, baharatlı ve ferah bir koku", "notes": ["ginger"], "all_accords": ["fresh spicy"]}
+{"id": "q038", "type": "note", "query": "portakal çiçeği kokan beyaz çiçekli bir parfüm", "notes": ["orange blossom"], "all_accords": ["white floral"], "lead_accords": ["white floral"]}
+{"id": "q041", "type": "note", "query": "şeftalili, meyveli ve tatlı bir parfüm", "notes": ["peach"], "all_accords": ["fruity", "sweet"]}
+{"id": "q042", "type": "note", "query": "ahududu ve gül içeren bir parfüm", "notes": ["raspberry", "rose"]}
+{"id": "q044", "type": "note", "query": "sandal ağacı ağırlıklı kremsi bir parfüm", "notes": ["sandalwood"], "all_accords": ["woody"], "any_accords": ["lactonic", "powdery"], "lead_accords": ["woody"]}
+{"id": "q046", "type": "note", "query": "meşe yosunlu, şipre tarzı eski usul bir parfüm", "any_notes": ["oakmoss", "oak moss"], "all_accords": ["mossy"]}
+{"id": "q047", "type": "note", "query": "anason kokan bir parfüm", "all_accords": ["anis"]}
+{"id": "q048", "type": "note", "query": "tuzlu karamel kokusu", "all_accords": ["caramel", "salty"]}
+{"id": "q050", "type": "note", "query": "ardıç kokan, cin gibi bir parfüm", "any_notes": ["juniper", "juniper berries"], "any_accords": ["aromatic", "fresh spicy", "conifer"]}
+{"id": "q053", "type": "note", "query": "ambroksanlı, modern odunsu ve amber bir parfüm", "notes": ["ambroxan"], "all_accords": ["woody", "amber"]}
+{"id": "q054", "type": "note", "query": "tonka fasulyesi ve vanilyalı sıcak bir erkek parfümü", "notes": ["tonka bean"], "all_accords": ["vanilla"], "gender": ["men"]}
+{"id": "q056", "type": "note", "query": "neroli kokan narenciye ve çiçek karışımı bir parfüm", "notes": ["neroli"], "all_accords": ["citrus", "white floral"]}
+{"id": "q059", "type": "note", "query": "ylang ylang ağırlıklı egzotik çiçek kokusu", "notes": ["ylang-ylang"], "any_accords": ["white floral", "tropical"]}
+{"id": "q063", "type": "note", "query": "karanfil kokan baharatlı çiçeksi bir parfüm", "any_notes": ["carnation", "cloves", "clove"], "all_accords": ["warm spicy", "floral"]}
+{"id": "q064", "type": "note", "query": "osmanthus kokan, şeftalimsi çiçek notası olan bir parfüm", "notes": ["osmanthus"]}
+{"id": "q073", "type": "note", "query": "türk gülü içeren bir parfüm", "notes": ["turkish rose"]}
+{"id": "q079", "type": "note", "query": "liçi ve gül içeren meyveli çiçeksi bir parfüm", "notes": ["litchi", "rose"]}
+{"id": "q087", "type": "note", "query": "yuzu kokan japon esintili narenciye parfümü", "notes": ["yuzu"], "all_accords": ["citrus"]}
+{"id": "q092", "type": "note", "query": "acı portakal kokan bir parfüm", "notes": ["bitter orange"]}
+{"id": "q098", "type": "note", "query": "muskat cevizi ve tarçın ile sıcak baharatlı bir koku", "notes": ["nutmeg", "cinnamon"], "all_accords": ["warm spicy"]}
+{"id": "q102", "type": "note", "query": "olibanum ve mür ile reçineli, mistik bir parfüm", "notes": ["myrrh"], "any_notes": ["olibanum", "incense"]}
+{"id": "q104", "type": "note", "query": "benzoin ve vanilya ile reçineli tatlı bir koku", "notes": ["benzoin"], "all_accords": ["vanilla", "balsamic"]}
+{"id": "q106", "type": "note", "query": "huş ağacı katranı gibi dumanlı deri kokusu", "notes": ["birch"], "all_accords": ["leather"]}
+{"id": "q107", "type": "note", "query": "süet gibi yumuşak deri kokan bir parfüm", "notes": ["suede"], "all_accords": ["leather"]}
+{"id": "q112", "type": "note", "query": "ambergris içeren tuzlu, tensel bir parfüm", "notes": ["ambergris"], "any_accords": ["salty", "musky", "marine"]}
+{"id": "q114", "type": "note", "query": "beyaz misk kokan temiz, pamuksu bir parfüm", "notes": ["white musk"], "all_accords": ["musky"]}
+{"id": "q117", "type": "note", "query": "pralin kokan, pastane gibi bir parfüm", "notes": ["praline"], "all_accords": ["sweet"]}
+{"id": "q119", "type": "note", "query": "madagaskar vanilyası içeren bir parfüm", "notes": ["madagascar vanilla"]}
+{"id": "q121", "type": "note", "query": "kakao ve tütün ile koyu, gourmand bir parfüm", "all_accords": ["tobacco"], "any_notes": ["cacao", "cocoa", "chocolate", "dark chocolate"]}
+{"id": "q122", "type": "note", "query": "kahve ve vanilya ile kış için sıcak bir koku", "notes": ["coffee"], "all_accords": ["vanilla"]}
+{"id": "q124", "type": "note", "query": "kiraz ve badem ile likörlü tatlı bir koku", "all_accords": ["cherry", "almond"]}
+{"id": "q127", "type": "note", "query": "bal ve tütün ile koyu tatlı bir koku", "all_accords": ["honey", "tobacco"]}
+{"id": "q137", "type": "note", "query": "hem gül hem ud içeren unisex bir parfüm", "all_accords": ["rose", "oud"], "gender": ["unisex"]}
+{"id": "q138", "type": "note", "query": "ud ve deri ile ağır, gece için bir erkek parfümü", "all_accords": ["oud", "leather"], "gender": ["men"]}
+{"id": "q139", "type": "note", "query": "ud ve vanilya ile tatlı doğu kokusu", "all_accords": ["oud", "vanilla"]}
+{"id": "q141", "type": "note", "query": "safran ve gül ile doğulu bir kadın parfümü", "notes": ["saffron", "rose"], "gender": ["women"]}
+{"id": "q144", "type": "note", "query": "lavanta ve vanilya ile tatlı bir fougère", "all_accords": ["lavender", "vanilla"]}
+{"id": "q146", "type": "note", "query": "iris ve deri ile soğuk, sofistike bir parfüm", "all_accords": ["iris", "leather"]}
+{"id": "q147", "type": "note", "query": "iris ve vanilya ile pudralı tatlı bir koku", "all_accords": ["iris", "vanilla"]}
+{"id": "q192", "type": "note", "query": "kahve ve kakule ile arap kahvesi gibi bir koku", "notes": ["coffee", "cardamom"]}
+{"id": "q193", "type": "note", "query": "çay ve bergamot ile earl grey gibi bir parfüm", "any_notes": ["tea", "black tea"], "notes": ["bergamot"]}
+{"id": "q195", "type": "note", "query": "kola kokan eğlenceli bir parfüm", "any_accords": ["coca-cola"]}
+{"id": "q002", "type": "style", "query": "vanilyalı ve tatlı ama boğmayan bir kadın parfümü", "all_accords": ["vanilla", "sweet"], "no_accords": ["oud", "leather", "animalic"], "gender": ["women"], "lead_accords": ["vanilla"]}
+{"id": "q004", "type": "style", "query": "denizi hatırlatan tuzlu, ferah bir parfüm", "any_accords": ["marine", "aquatic"], "all_accords": ["salty"]}
+{"id": "q007", "type": "style", "query": "pudralı iris kokan zarif bir kadın parfümü", "all_accords": ["iris", "powdery"], "gender": ["women"]}
+{"id": "q009", "type": "style", "query": "lavantalı, berber dükkânı gibi temiz kokan erkek parfümü", "all_accords": ["lavender", "aromatic"], "gender": ["men"]}
+{"id": "q011", "type": "style", "query": "taze kesilmiş çimen gibi yeşil kokan bir şey", "all_accords": ["green"], "any_notes": ["green notes", "grass", "galbanum", "violet leaf"]}
+{"id": "q012", "type": "style", "query": "yasemin ağırlıklı, tatlı olmayan beyaz çiçekli bir kadın parfümü", "all_accords": ["white floral"], "notes": ["jasmine"], "gender": ["women"], "lead_accords": ["white floral"], "no_accords": ["sweet", "vanilla"]}
+{"id": "q014", "type": "style", "query": "karamel ve vanilya içeren, gurme tarzı unisex bir koku", "all_accords": ["caramel", "vanilla"], "gender": ["unisex"]}
+{"id": "q016", "type": "style", "query": "dumanlı, odunsu ve biraz da deri kokan bir erkek parfümü", "all_accords": ["smoky", "woody", "leather"], "gender": ["men"]}
+{"id": "q017", "type": "style", "query": "yağmur sonrası toprak kokusu gibi bir parfüm", "all_accords": ["earthy"], "any_accords": ["green", "mossy", "woody"]}
+{"id": "q018", "type": "style", "query": "sabun gibi temiz, aldehitli klasik bir kadın parfümü", "all_accords": ["aldehydic"], "any_accords": ["powdery", "soapy"], "gender": ["women"]}
+{"id": "q024", "type": "style", "query": "menekşe kokan pudralı bir parfüm", "all_accords": ["violet", "powdery"]}
+{"id": "q027", "type": "style", "query": "ozon gibi, havalandırılmış çamaşır ferahlığında bir koku", "all_accords": ["ozonic"], "any_accords": ["fresh", "aquatic", "musky"]}
+{"id": "q028", "type": "style", "query": "misk ağırlıklı, ten kokusu gibi sade bir parfüm", "all_accords": ["musky"], "no_accords": ["sweet", "fruity", "vanilla"], "lead_accords": ["musky"]}
+{"id": "q029", "type": "style", "query": "greyfurtlu, ekşimsi narenciye kokan bir şey", "notes": ["grapefruit"], "all_accords": ["citrus"], "lead_accords": ["citrus"]}
+{"id": "q043", "type": "style", "query": "frenk üzümü kokan meyveli bir şey", "any_notes": ["black currant", "cassis"], "all_accords": ["fruity"], "lead_accords": ["fruity"]}
+{"id": "q045", "type": "style", "query": "sedir ağacı kokan kuru odunsu bir erkek parfümü", "notes": ["cedar"], "all_accords": ["woody"], "no_accords": ["sweet", "fruity"], "gender": ["men"], "lead_accords": ["woody"]}
+{"id": "q049", "type": "style", "query": "mandalina kokan, neşeli bir yazlık parfüm", "any_notes": ["mandarin orange", "tangerine"], "all_accords": ["citrus", "fruity"]}
+{"id": "q055", "type": "style", "query": "pembe biberli, meyveli ve modern bir kadın parfümü", "notes": ["pink pepper"], "all_accords": ["fruity"], "gender": ["women"]}
+{"id": "q057", "type": "style", "query": "manolya kokan çiçeksi bir parfüm", "notes": ["magnolia"], "any_accords": ["floral", "white floral"]}
+{"id": "q058", "type": "style", "query": "gardenya kokan beyaz çiçekli bir parfüm", "notes": ["gardenia"], "all_accords": ["white floral"]}
+{"id": "q060", "type": "style", "query": "inci çiçeği kokan bahar havasında bir kadın parfümü", "notes": ["lily-of-the-valley"], "all_accords": ["white floral"], "gender": ["women"]}
+{"id": "q061", "type": "style", "query": "yasemin ve tuberoz ile yoğun beyaz çiçek kokusu", "notes": ["jasmine", "tuberose"], "all_accords": ["white floral"]}
+{"id": "q068", "type": "style", "query": "mimoza kokan pudralı sarı çiçekli bir parfüm", "notes": ["mimosa"], "any_accords": ["powdery", "yellow floral"]}
+{"id": "q080", "type": "style", "query": "yeşil elma kokan ferah bir parfüm", "notes": ["green apple"], "any_accords": ["fresh", "green", "fruity"]}
+{"id": "q089", "type": "style", "query": "misket limonu kokan ferah bir şey", "notes": ["lime"], "all_accords": ["citrus"]}
+{"id": "q093", "type": "style", "query": "bergamot ağırlıklı, sabah için hafif bir erkek parfümü", "notes": ["bergamot"], "all_accords": ["citrus", "fresh"], "gender": ["men"]}
+{"id": "q110", "type": "style", "query": "çam ağacı kokan, orman havasında bir parfüm", "any_notes": ["pine", "fir"], "any_accords": ["conifer", "green", "woody", "aromatic"]}
+{"id": "q111", "type": "style", "query": "kehribar yani amber kokan sıcak bir kış parfümü", "all_accords": ["amber", "warm spicy"], "any_accords": ["vanilla", "balsamic"]}
+{"id": "q126", "type": "style", "query": "süt ve krema gibi laktonik, yumuşak bir parfüm", "all_accords": ["lactonic"], "any_accords": ["sweet", "vanilla"]}
+{"id": "q131", "type": "style", "query": "deniz notaları içeren klasik bir erkek okyanus parfümü", "any_notes": ["sea notes", "water notes", "marine notes"], "any_accords": ["aquatic", "marine"], "gender": ["men"]}
+{"id": "q132", "type": "style", "query": "suyun kokusu gibi sulu ve şeffaf bir kadın parfümü", "any_accords": ["aquatic"], "all_accords": ["floral"], "gender": ["women"]}
+{"id": "q135", "type": "style", "query": "otsu, bitkisel bir parfüm", "all_accords": ["herbal"]}
+{"id": "q136", "type": "style", "query": "yosun ve odun ile ormanda yürüyüş hissi veren bir parfüm", "all_accords": ["mossy", "woody", "green"]}
+{"id": "q142", "type": "style", "query": "paçuli ağırlıklı topraksı bir parfüm", "notes": ["patchouli"], "all_accords": ["patchouli", "earthy"]}
+{"id": "q145", "type": "style", "query": "lavanta ve tonka ile klasik fougère tarzı erkek parfümü", "notes": ["lavender", "tonka bean"], "all_accords": ["aromatic"], "gender": ["men"]}
+{"id": "q149", "type": "style", "query": "kozmetik, ruj kokusu gibi pudralı bir parfüm", "all_accords": ["powdery", "violet"], "any_notes": ["iris", "orris", "orris root"]}
+{"id": "q150", "type": "style", "query": "bebek pudrası gibi temiz ve pudralı bir koku", "all_accords": ["powdery", "musky"], "no_accords": ["oud", "leather", "smoky", "tobacco"], "lead_accords": ["powdery"]}
+{"id": "q151", "type": "style", "query": "çiçeksi aldehitli, retro bir kadın parfümü", "all_accords": ["aldehydic", "floral"], "gender": ["women"]}
+{"id": "q152", "type": "style", "query": "tatlı olmayan, odunsu ve aromatik bir erkek parfümü", "all_accords": ["woody", "aromatic"], "no_accords": ["sweet", "vanilla", "fruity", "caramel"], "gender": ["men"], "lead_accords": ["woody", "aromatic"]}
+{"id": "q153", "type": "style", "query": "çiçeksiz, tamamen odunsu bir unisex parfüm", "all_accords": ["woody"], "no_accords": ["floral", "white floral", "rose", "yellow floral", "sweet"], "gender": ["unisex"], "lead_accords": ["woody"]}
+{"id": "q154", "type": "style", "query": "vanilyasız, ferah ve çiçeksi bir kadın parfümü", "all_accords": ["floral", "fresh"], "no_accords": ["vanilla", "sweet"], "gender": ["women"]}
+{"id": "q155", "type": "style", "query": "meyveli ama tatlı olmayan bir parfüm", "all_accords": ["fruity"], "no_accords": ["sweet", "vanilla", "caramel"], "lead_accords": ["fruity"]}
+{"id": "q156", "type": "style", "query": "gül kokan ama yaşlı kadın parfümü gibi durmayan, meyveli modern bir gül", "all_accords": ["rose", "fruity"], "no_accords": ["powdery", "aldehydic"]}
+{"id": "q157", "type": "style", "query": "beyaz çiçekli ama ağır olmayan, yeşil bir parfüm", "all_accords": ["white floral", "green"]}
+{"id": "q158", "type": "style", "query": "deri kokan ama sert olmayan, çiçekli bir kadın parfümü", "all_accords": ["leather", "floral"], "gender": ["women"]}
+{"id": "q160", "type": "style", "query": "tütün kokan ama tatlı olmayan, kuru bir parfüm", "all_accords": ["tobacco"], "no_accords": ["sweet", "vanilla", "honey", "caramel"]}
+{"id": "q161", "type": "style", "query": "ud içermeyen, odunsu ve amber bir erkek parfümü", "all_accords": ["woody", "amber"], "no_accords": ["oud"], "no_notes": ["agarwood"], "gender": ["men"]}
+{"id": "q162", "type": "style", "query": "unisex, odunsu ve misk kokan sakin bir parfüm", "all_accords": ["woody", "musky"], "gender": ["unisex"], "no_accords": ["sweet", "fruity"]}
+{"id": "q163", "type": "style", "query": "unisex narenciye ve aromatik ile kolonya tarzı bir parfüm", "all_accords": ["citrus", "aromatic"], "gender": ["unisex"]}
+{"id": "q166", "type": "style", "query": "kadın parfümü, tatlı meyveli ve gourmand, genç bir koku", "all_accords": ["fruity", "sweet", "vanilla"], "gender": ["women"]}
+{"id": "q001", "type": "occasion", "query": "yazın ofiste sürebileceğim ferah, narenciyeli bir erkek parfümü", "all_accords": ["citrus"], "any_accords": ["fresh", "aromatic", "fresh spicy"], "gender": ["men"], "lead_accords": ["citrus"]}
+{"id": "q159", "type": "occasion", "query": "baharatlı ama ferah, sıcak havada sürülebilecek bir erkek parfümü", "all_accords": ["fresh spicy", "citrus"], "no_accords": ["warm spicy", "vanilla", "amber"], "gender": ["men"]}
+{"id": "q175", "type": "occasion", "query": "kış için tarçın ve vanilya içeren sıcak bir parfüm", "notes": ["cinnamon"], "all_accords": ["vanilla", "warm spicy"]}
+{"id": "q176", "type": "occasion", "query": "sonbahar için tütün, baharat ve kuru meyve kokan bir parfüm", "all_accords": ["tobacco", "warm spicy", "fruity"]}
+{"id": "q177", "type": "occasion", "query": "ilkbahar için yeşil ve çiçeksi hafif bir parfüm", "all_accords": ["green", "floral", "fresh"]}
+{"id": "q178", "type": "occasion", "query": "yaz akşamı için narenciye ve beyaz çiçek karışımı bir parfüm", "all_accords": ["citrus", "white floral"], "any_accords": ["fresh", "musky"]}
+{"id": "q179", "type": "occasion", "query": "çok sıcak havada bile bunaltmayan sulu, narenciyeli bir koku", "all_accords": ["citrus", "aquatic"], "no_accords": ["vanilla", "amber", "warm spicy"]}
+{"id": "q180", "type": "occasion", "query": "yatmadan önce sürülecek sakin, lavantalı ve pudralı bir koku", "all_accords": ["lavender", "powdery"]}
+{"id": "q181", "type": "occasion", "query": "düğün için romantik, gül ve beyaz çiçekli bir kadın parfümü", "all_accords": ["rose", "white floral"], "gender": ["women"]}
+{"id": "q182", "type": "occasion", "query": "iş görüşmesi için sade, temiz ve odunsu bir erkek parfümü", "all_accords": ["woody", "citrus", "musky"], "no_accords": ["oud", "animalic", "sweet"], "gender": ["men"]}
+{"id": "q183", "type": "occasion", "query": "spor salonu sonrası için ferah, yeşil ve narenciye kokan bir şey", "all_accords": ["citrus", "green", "fresh"]}
+{"id": "q184", "type": "occasion", "query": "randevu için tatlı ve baharatlı, dikkat çeken bir erkek parfümü", "all_accords": ["sweet", "warm spicy"], "any_accords": ["vanilla", "amber"], "gender": ["men"]}
+{"id": "q185", "type": "occasion", "query": "kar yağarken sürülecek amber, reçine ve tütsü kokan bir parfüm", "all_accords": ["amber", "balsamic"], "any_notes": ["incense", "olibanum"]}
+{"id": "q188", "type": "occasion", "query": "kumaş yumuşatıcısı gibi temiz kokan bir parfüm", "all_accords": ["musky", "powdery"], "any_accords": ["aldehydic", "fresh", "soapy"]}
+{"id": "q189", "type": "occasion", "query": "hamam gibi sabunlu, temiz bir koku", "any_accords": ["soapy", "aldehydic"], "all_accords": ["musky"]}
+{"id": "o001", "type": "occasion", "query": "ilk buluşmada çekici ama abartısız bir koku", "lead_accords": ["musky"], "all_accords": ["musky"], "any_accords": ["sweet", "vanilla", "amber"], "no_accords": ["oud", "animalic", "leather", "smoky"]}
+{"id": "o002", "type": "occasion", "query": "ofiste kimseyi rahatsız etmeyecek, yakından duyulan temiz bir koku", "all_accords": ["musky"], "any_accords": ["fresh", "citrus"], "no_accords": ["oud", "animalic", "leather", "tobacco", "smoky", "sweet", "vanilla"]}
+{"id": "o003", "type": "occasion", "query": "yağmurlu bir pazar sabahı evde sürmek için huzurlu bir şey", "all_accords": ["green"], "any_accords": ["earthy", "ozonic", "mossy"]}
+{"id": "o004", "type": "occasion", "query": "düğünde sağdıç olacağım, şık ve klasik görünmem lazım", "lead_accords": ["aromatic"], "gender": ["men"], "all_accords": ["aromatic", "woody"], "any_accords": ["fresh spicy", "citrus"], "no_accords": ["sweet", "fruity", "tropical"]}
+{"id": "o005", "type": "occasion", "query": "kendimi güçlü ve kendinden emin hissettiren bir parfüm", "all_accords": ["leather"], "any_accords": ["woody", "amber"]}
+{"id": "o006", "type": "occasion", "query": "sarılınca karşıdakinin üstünde kalan sıcak, rahatlatıcı bir koku", "all_accords": ["vanilla", "musky"], "any_accords": ["amber", "powdery"]}
+{"id": "o007", "type": "occasion", "query": "pahalı görünen, lüks bir otel lobisi gibi kokan bir şey", "all_accords": ["woody", "amber"], "any_accords": ["oud", "leather", "iris"]}
+{"id": "o008", "type": "occasion", "query": "sonbaharda ceketle sürülecek bir koku", "lead_accords": ["warm spicy"], "all_accords": ["warm spicy", "woody"], "any_accords": ["tobacco", "leather", "amber"]}
+{"id": "o009", "type": "occasion", "query": "yazın plajda, tatil havasında bir koku", "all_accords": ["fresh"], "any_accords": ["coconut", "salty", "tropical"]}
+{"id": "o010", "type": "occasion", "query": "uyumadan önce sakinleştirici bir koku", "all_accords": ["lavender"], "any_accords": ["powdery", "musky", "vanilla"]}
+{"id": "o011", "type": "occasion", "query": "genç ve enerjik hissettiren, eğlenceli bir kadın parfümü", "gender": ["women"], "all_accords": ["fruity", "sweet"], "any_accords": ["citrus", "tropical"]}
+{"id": "o012", "type": "occasion", "query": "olgun, zarif ve gizemli bir kadın parfümü", "gender": ["women"], "all_accords": ["powdery"], "any_accords": ["patchouli", "iris", "leather"]}
+{"id": "o013", "type": "occasion", "query": "sabah işe giderken uyandıran, enerjik bir koku", "lead_accords": ["citrus", "fresh spicy"], "all_accords": ["citrus"], "any_accords": ["aromatic", "green"], "no_accords": ["vanilla", "amber"]}
+{"id": "o014", "type": "occasion", "query": "toplantıda ciddi ve güvenilir görünmek istiyorum", "gender": ["men"], "all_accords": ["woody"], "any_accords": ["leather", "iris"], "no_accords": ["sweet", "fruity", "tropical"]}
+{"id": "o015", "type": "occasion", "query": "karlı bir kış akşamı şömine başında oturmak gibi", "all_accords": ["smoky"], "any_accords": ["amber", "woody", "balsamic"]}
+{"id": "o016", "type": "occasion", "query": "temiz çarşaf, yeni yıkanmış çamaşır hissi", "lead_accords": ["musky"], "all_accords": ["musky"], "any_accords": ["aldehydic", "powdery", "fresh"], "no_accords": ["sweet", "fruity", "oud"]}
+{"id": "o017", "type": "occasion", "query": "bahçede çiçekler arasında dolaşıyormuş gibi hissettiren bir parfüm", "all_accords": ["floral", "green"]}
+{"id": "o018", "type": "occasion", "query": "kalabalıkta fark edilmek, iz bırakmak istiyorum", "lead_accords": ["sweet"], "all_accords": ["amber"]}
+{"id": "o019", "type": "occasion", "query": "çok tatlı kokular başımı ağrıtıyor, sade bir şey istiyorum", "all_accords": ["woody", "musky"], "any_accords": ["citrus", "aromatic"], "no_accords": ["sweet", "vanilla", "fruity", "caramel", "honey"]}
+{"id": "o020", "type": "occasion", "query": "babamın eskiden sürdüğü gibi klasik bir erkek kolonyası", "gender": ["men"], "all_accords": ["aromatic", "citrus"], "any_accords": ["lavender", "mossy"]}
+{"id": "o021", "type": "occasion", "query": "annemin gece çıkarken sürdüğü klasik bir kadın parfümü", "gender": ["women"], "all_accords": ["aldehydic", "powdery"]}
+{"id": "o022", "type": "occasion", "query": "doğum günü partisi için neşeli ve tatlı bir koku", "lead_accords": ["fruity"], "all_accords": ["fruity", "sweet"], "any_accords": ["tropical", "cherry", "vanilla"]}
+{"id": "o023", "type": "occasion", "query": "erkek arkadaşıma hediye alacağım, herkesin beğeneceği bir şey", "lead_accords": ["aromatic"], "gender": ["men"], "all_accords": ["aromatic", "woody"], "any_accords": ["fresh spicy", "citrus"]}
+{"id": "o024", "type": "occasion", "query": "kız arkadaşıma hediye, romantik bir parfüm", "gender": ["women"], "all_accords": ["rose"], "any_accords": ["fruity", "white floral", "sweet"]}
+{"id": "o025", "type": "occasion", "query": "kendimi temiz ve bakımlı hissettiren bir şey", "all_accords": ["musky", "fresh"], "any_accords": ["citrus", "powdery"]}
+{"id": "o026", "type": "occasion", "query": "ormanda kamp ateşi başında gibi bir koku", "all_accords": ["smoky", "woody"], "any_accords": ["conifer", "leather", "balsamic"]}
+{"id": "o027", "type": "occasion", "query": "yeni kesilmiş odun ve marangoz atölyesi kokusu", "lead_accords": ["woody"], "any_accords": ["smoky", "leather", "earthy"], "no_accords": ["sweet", "fruity", "floral", "white floral"]}
+{"id": "o028", "type": "occasion", "query": "nemli, sıcak bir yaz gününde ferahlatıcı bir şey", "lead_accords": ["citrus"], "all_accords": ["citrus"], "any_accords": ["aquatic", "green", "ozonic"], "no_accords": ["vanilla", "amber", "warm spicy"]}
+{"id": "o029", "type": "occasion", "query": "üniversiteye giderken her gün sürebileceğim hafif bir kadın parfümü", "lead_accords": ["fresh"], "gender": ["women"], "all_accords": ["fresh"], "any_accords": ["citrus", "fruity", "floral"], "no_accords": ["oud", "leather", "animalic", "amber"]}
+{"id": "o030", "type": "occasion", "query": "yaşlı görünmek istemiyorum, modern ve genç bir erkek parfümü", "gender": ["men"], "all_accords": ["fresh spicy"], "any_accords": ["fruity", "sweet"]}
+{"id": "o031", "type": "occasion", "query": "gizemli ve karanlık, gece yarısı gibi bir koku", "all_accords": ["amber"], "any_accords": ["smoky", "oud", "leather"], "no_accords": ["fresh", "citrus"]}
+{"id": "o032", "type": "occasion", "query": "pamuk gibi yumuşak, rüya gibi bir koku", "all_accords": ["powdery", "musky"], "any_accords": ["vanilla", "sweet"]}
+{"id": "o033", "type": "occasion", "query": "akdeniz tatili, limon bahçeleri ve deniz", "all_accords": ["citrus"], "any_accords": ["aquatic", "marine", "salty"]}
+{"id": "o034", "type": "occasion", "query": "japon bahçesi gibi sakin ve dingin bir koku", "all_accords": ["green"], "any_accords": ["aquatic", "white floral", "fresh"], "no_accords": ["sweet", "vanilla"]}
+{"id": "o035", "type": "occasion", "query": "baharda pikniğe giderken sürülecek bir şey", "all_accords": ["green", "fruity"], "any_accords": ["floral", "citrus"]}
+{"id": "o036", "type": "occasion", "query": "kışın soğukta bile hissedilen sıcak ve kalın bir koku", "all_accords": ["amber", "warm spicy", "vanilla"]}
+{"id": "o037", "type": "occasion", "query": "ağır kokulara dayanamıyorum, çok hafif bir şey", "all_accords": ["fresh", "musky"], "no_accords": ["oud", "animalic", "leather", "tobacco", "smoky", "sweet", "amber", "warm spicy", "vanilla"]}
+{"id": "o038", "type": "occasion", "query": "deri ceketli bir rock'çı gibi kokmak istiyorum", "all_accords": ["leather", "smoky"]}
+{"id": "o039", "type": "occasion", "query": "arap çarşısı gibi baharatlı ve egzotik bir koku", "lead_accords": ["warm spicy"], "any_accords": ["oud", "balsamic", "amber"]}
+{"id": "o040", "type": "occasion", "query": "yılbaşı havası veren bir koku", "all_accords": ["warm spicy", "sweet"], "any_accords": ["cinnamon", "balsamic", "conifer"]}
+{"id": "o041", "type": "occasion", "query": "fırından yeni çıkmış kek gibi bir koku", "all_accords": ["sweet", "vanilla"], "any_accords": ["caramel", "nutty", "almond"]}
+{"id": "o042", "type": "occasion", "query": "çiçekçi dükkânına girmiş gibi hissettiren bir parfüm", "lead_accords": ["floral"], "all_accords": ["white floral"]}
+{"id": "o043", "type": "occasion", "query": "kış için ama hafif, ağır parfüm sevmiyorum", "all_accords": ["woody", "musky"], "any_accords": ["citrus", "aromatic"], "no_accords": ["oud", "animalic", "leather", "tobacco", "smoky", "vanilla"]}
+{"id": "o044", "type": "occasion", "query": "erkek için seksi bir parfüm", "gender": ["men"], "all_accords": ["sweet", "warm spicy"], "any_accords": ["vanilla", "amber", "tobacco"]}
+{"id": "o045", "type": "occasion", "query": "kadınsı ve seksi bir gece parfümü", "gender": ["women"], "all_accords": ["white floral", "sweet"], "any_accords": ["amber", "vanilla"]}
+{"id": "o046", "type": "occasion", "query": "kendimi prenses gibi hissettiren tatlı bir parfüm", "gender": ["women"], "all_accords": ["sweet", "fruity", "floral"]}
+{"id": "o047", "type": "occasion", "query": "dağ havası gibi temiz ve serin bir koku", "all_accords": ["fresh"], "any_accords": ["green", "ozonic", "conifer"], "no_accords": ["sweet", "vanilla", "amber"]}
+{"id": "o048", "type": "occasion", "query": "yaz düğünü için hafif ve zarif bir kadın parfümü", "gender": ["women"], "all_accords": ["white floral", "fresh"], "any_accords": ["citrus", "green"]}
+{"id": "o049", "type": "occasion", "query": "kış düğünü için zarif bir erkek parfümü", "gender": ["men"], "all_accords": ["woody", "amber"], "any_accords": ["iris", "leather", "warm spicy"]}
+{"id": "o050", "type": "occasion", "query": "akşam yemeğine şık bir restorana gidiyorum", "lead_accords": ["warm spicy"], "all_accords": ["warm spicy", "woody"], "any_accords": ["iris", "leather", "amber"], "no_accords": ["aquatic", "fresh"]}
+{"id": "o051", "type": "occasion", "query": "deniz kenarında yürüyüş, rüzgâr ve tuz", "all_accords": ["fresh"], "any_accords": ["marine", "salty", "ozonic"]}
+{"id": "o052", "type": "occasion", "query": "orta doğu tarzı yoğun ve kalıcı bir koku", "lead_accords": ["oud"], "any_accords": ["amber", "rose", "warm spicy"]}
+{"id": "o053", "type": "occasion", "query": "kampüste gün boyu sürebileceğim rahat bir erkek parfümü", "gender": ["men"], "all_accords": ["fresh", "aromatic"], "any_accords": ["citrus"], "no_accords": ["oud", "animalic", "leather", "tobacco", "smoky", "amber"]}
+{"id": "o054", "type": "occasion", "query": "hafta sonu kahvaltısına giderken neşeli bir koku", "lead_accords": ["citrus"], "all_accords": ["citrus", "fruity"], "no_accords": ["oud", "leather", "amber"]}
+{"id": "o055", "type": "occasion", "query": "yoga ve meditasyon sonrası sakin bir koku", "lead_accords": ["woody"], "all_accords": ["woody"], "any_accords": ["herbal", "green", "balsamic"], "no_accords": ["sweet", "fruity"]}
+{"id": "o056", "type": "occasion", "query": "kadın ama erkeksi duran, cesur bir parfüm", "gender": ["women"], "all_accords": ["leather"], "any_accords": ["woody", "tobacco", "smoky"]}
+{"id": "o057", "type": "occasion", "query": "erkek ama çiçeksi, yumuşak bir parfüm", "gender": ["men"], "all_accords": ["powdery"], "any_accords": ["iris", "rose", "violet", "white floral"]}
+{"id": "o058", "type": "occasion", "query": "iş görüşmesinde kendime güvenim gelsin diye sürecek bir kadın parfümü", "gender": ["women"], "all_accords": ["woody"], "any_accords": ["iris", "musky"], "no_accords": ["sweet", "tropical", "cherry", "fruity"]}
