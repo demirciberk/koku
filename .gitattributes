@@ -1,0 +1,2 @@
+eval/qrels.jsonl text eol=lf
+eval/queries.jsonl text eol=lf
