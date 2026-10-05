@@ -18,6 +18,7 @@ Fragrantica.com Fragrance Dataset (Kaggle, olgagmiufana1, v3, 2024-09-21), CC BY
 | Profile | `uv run --with pandas python profile_data.py` | stdout |
 | Clean | `uv run --with pandas python clean.py` | `data/perfumes.jsonl` (24,063 perfumes) |
 | BM25 baseline | `python retrieve/bm25.py` | `runs/bm25.jsonl` |
+| Student SFT | `uv run python distill/sft.py` then `--eval base|tuned` | `models/qwen3-0.6b-koku`, `runs/sft-*.json` |
 | Retriever fine-tune | `uv run python retrieve/finetune.py` | `models/bge-m3-koku` |
 | Dense baselines | `uv run python retrieve/dense.py [--docs en\|tr\|desc]` | `runs/dense-*.jsonl` |
 | Teacher data | `uv run python distill/generate.py` (needs local llama-server, see script) | `data/teacher.jsonl` |
@@ -76,6 +77,20 @@ Occasion queries are still far behind note and style queries.
 - Held-out teacher queries, recall@10: 0.116 before, 0.305 after.
 - Eval set, nDCG@10: 0.426 to 0.477 overall; note 0.642 to 0.749, style 0.550 to 0.609.
 - Occasion queries do not move (0.165 to 0.164). The teacher's occasion queries are repetitive ("kış günü..."), so the model learns little new about situations. Better occasion training data is the next lever, not more epochs.
+
+## Distilled student LM
+
+`distill/sft.py` distils the teacher (Qwen3-8B, Q4_K_M) into Qwen3-0.6B with LoRA (r=16, all projection layers, 10M trainable parameters) by sequence-level SFT: input is the perfume's Turkish fields, target is the teacher's JSON (description + three queries). Loss on the answer tokens only. One epoch over 12,559 perfumes, ~45 minutes on an RTX 4060. The same 5% held-out perfumes as the retriever are never trained on.
+
+Held-out, 200 perfumes, greedy decoding:
+
+| Model | Valid JSON | Description names a note the perfume does not have | Tokens/s (batch 16, HF generate) |
+|---|---|---|---|
+| Qwen3-0.6B, untuned | 0% | n/a | 96 |
+| Qwen3-0.6B + LoRA SFT | **100%** | **2.0%** | 136 |
+| Teacher (Qwen3-8B), same perfumes | 100% | 10.5% | ~24 per stream (llama.cpp) |
+
+The untuned 0.6B invents its own keys (`tanım`, `arama_sorgulari`) and fills queries with noise. After SFT the student follows the format every time and invents notes less often than its teacher, because it learned to stay close to the input list. It also inherits the teacher's repetitive occasion queries ("kış günü evde kahve içmek için..."), so query diversity is bounded by the teacher data. "Foreign note" only checks names from the translation table, so untranslated rare notes are not counted.
 
 Charts: `uv run python eval/plot.py`.
 
