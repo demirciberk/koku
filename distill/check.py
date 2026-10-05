@@ -43,13 +43,27 @@ def report(rows: list[dict], by: dict) -> dict:
             "distinct_openings": {k: round(v, 2) for k, v in div.items()}, "top_occasion_openings": top}
 
 
+def bad(r: dict, p: dict) -> bool:
+    """Hard failures that would teach the student wrong things; copied angle examples are kept (harmless, just repetitive)."""
+    qs = " ".join(r["queries"].values()).lower()
+    return bool(ENGLISH.search(r["description"].lower() + " " + qs)
+                or any(len(x) > 3 and x.lower() in qs for x in (p["brand"], p["name"]))
+                or SCENT.search(r["queries"]["occasion"].lower()))
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--samples", type=int, default=4)
+    ap.add_argument("--write", action="store_true", help="write data/teacher.clean.jsonl without hard failures")
     args = ap.parse_args()
     by = {p["id"]: p for p in corpus()}
     rows = [json.loads(l) for l in open("data/teacher.jsonl", encoding="utf-8") if l.strip()]
     print(json.dumps(report(rows, by), ensure_ascii=False, indent=1))
+    if args.write:
+        clean = [r for r in rows if not bad(r, by[r["id"]])]
+        with open("data/teacher.clean.jsonl", "w", encoding="utf-8") as f:
+            f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in clean)
+        print(f"clean: kept {len(clean)}/{len(rows)}")
     random.seed(1)
     for r in random.sample(rows, min(args.samples, len(rows))):
         p = by[r["id"]]
