@@ -18,7 +18,9 @@ Fragrantica.com Fragrance Dataset (Kaggle, olgagmiufana1, v3, 2024-09-21), CC BY
 | Profile | `uv run --with pandas python profile_data.py` | stdout |
 | Clean | `uv run --with pandas python clean.py` | `data/perfumes.jsonl` (24,063 perfumes) |
 | BM25 baseline | `python retrieve/bm25.py` | `runs/bm25.jsonl` |
-| Dense baselines | `uv run python retrieve/dense.py` | `runs/dense-*.jsonl` |
+| Dense baselines | `uv run python retrieve/dense.py [--docs en\|tr\|desc]` | `runs/dense-*.jsonl` |
+| Teacher data | `uv run python distill/generate.py` (needs local llama-server, see script) | `data/teacher.jsonl` |
+| Teacher QA | `uv run python distill/check.py --write` | `data/teacher.clean.jsonl` |
 | Charts | `uv run python eval/plot.py` | `assets/*.png` |
 
 `fra_cleaned.csv` is `;`-separated, decimal comma, cp1252-encoded (`0x99` = ™, `0x92` = ’). Cleaning lowercases notes, strips ®/™, dedupes notes per tier, and title-cases name/brand slugs.
@@ -46,11 +48,24 @@ nDCG@10 per query type (`uv run python eval/evaluate.py runs/<run>.jsonl` prints
 | BM25 on raw Turkish query (`retrieve/bm25.py`) | 0.048 | 0.092 | 0.052 | 0.009 |
 | multilingual-e5-small, zero-shot (`retrieve/dense.py`) | 0.121 | 0.157 | 0.177 | 0.053 |
 | multilingual-e5-base, zero-shot | 0.145 | 0.168 | 0.229 | 0.070 |
-| BGE-M3, zero-shot | **0.180** | **0.189** | **0.303** | **0.089** |
+| BGE-M3, zero-shot | 0.180 | 0.189 | 0.303 | 0.089 |
+| multilingual-e5-base, Turkish docs (`--docs tr`) | 0.322 | 0.467 | 0.411 | 0.142 |
+| BGE-M3, Turkish docs (`--docs tr`) | 0.359 | 0.532 | 0.494 | 0.125 |
+| multilingual-e5-base, + teacher description (`--docs desc`) | 0.374 | 0.610 | 0.476 | 0.110 |
+| BGE-M3, + teacher description (`--docs desc`) | **0.426** | **0.642** | **0.550** | **0.165** |
 
 ![Why keyword search fails](assets/vocab-gap.png)
 
 BM25 only helps where a Turkish query shares a token with the English perfume text (e.g. "bergamot", "iris", "neroli"): 137 of 183 queries share none and fall back to the popularity ranking. Off-the-shelf multilingual embedders close the language gap (BGE-M3 is 3.8x BM25 overall), but occasion queries stay weakest: mapping "fireplace" or "first date" to accords is what a fine-tuned retriever has to learn.
+
+### Document expansion
+
+Two cheap changes to the perfume side, with no model training:
+
+- `--docs tr`: notes and accords mapped to Turkish with a fixed table (`distill/tr_names.json`, 300 most frequent notes + all accords). BGE-M3 doubles (0.180 to 0.359); note queries go from 0.189 to 0.532. Cross-lingual matching was the main loss, not model capacity.
+- `--docs desc`: the Turkish fields plus a 2-3 sentence Turkish description written by the local teacher (Qwen3-8B, `distill/generate.py`). Another +19% overall (0.426), and the best occasion score so far (0.165), because descriptions name seasons and settings that raw accords never mention.
+
+Occasion queries are still far behind note and style queries. That gap is the target for retriever fine-tuning on teacher-generated (query, perfume) pairs.
 
 Charts: `uv run python eval/plot.py`.
 
