@@ -2,6 +2,8 @@
 
 Turkish fragrance assistant: distilled small LM, fine-tuned retriever, in-browser demo.
 
+**Live demo:** [demirciberk.com/demo/koku](https://demirciberk.com/demo/koku/) (replay of all 183 eval queries, baseline vs final system, with descriptions written by the distilled 0.6B student).
+
 ## Data
 
 Fragrantica.com Fragrance Dataset (Kaggle, olgagmiufana1, v3, 2024-09-21), CC BY-NC-SA 4.0. Non-commercial; derived models and data are shared under the same license.
@@ -24,6 +26,7 @@ Fragrantica.com Fragrance Dataset (Kaggle, olgagmiufana1, v3, 2024-09-21), CC BY
 | Dense baselines | `uv run python retrieve/dense.py [--docs en\|tr\|desc]` | `runs/dense-*.jsonl` |
 | Teacher data | `uv run python distill/generate.py` (needs local llama-server, see script) | `data/teacher.jsonl` |
 | Teacher QA | `uv run python distill/check.py --write` | `data/teacher.clean.jsonl` |
+| Demo data | `uv run python demo/build.py` (Q4_K_M student via llama-server) | `demo/data.json` |
 | Charts | `uv run python eval/plot.py` | `assets/*.png` |
 
 `fra_cleaned.csv` is `;`-separated, decimal comma, cp1252-encoded (`0x99` = ™, `0x92` = ’). Cleaning lowercases notes, strips ®/™, dedupes notes per tier, and title-cases name/brand slugs.
