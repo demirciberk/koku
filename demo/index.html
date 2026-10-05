@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>koku - Turkish perfume search replay - Berk Demirci</title>
+<meta name="description" content="Replay of koku: 183 Turkish perfume queries, zero-shot vs fine-tuned retrieval, with descriptions written by a distilled 0.6B model.">
+<meta name="theme-color" content="#FDF6D5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Instrument+Serif&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --bg: #FDF6D5; --surface: #FFFDF2; --line: #E0D7AC; --fg: #151313; --muted: #5C5A52; --accent: #8B2F2F; --ok: #2F6B3A;
+    --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 1rem/1.6 var(--sans); }
+  main { max-width: 1100px; margin: 0 auto; padding: clamp(40px, 7vw, 80px) 24px; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .label { font: 500 0.6875rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  h1 { font: 400 clamp(2.2rem, 6vw, 3.25rem)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 14px; }
+  h2 { font: 400 1.5rem/1.1 var(--serif); margin: 0 0 4px; }
+  .lede { color: var(--muted); margin: 0 0 28px; max-width: 66ch; }
+  .tools { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+  input, select { font: inherit; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; min-width: 0; max-width: 100%; }
+  #search { flex: 1 1 260px; }
+  #q { flex: 3 1 360px; }
+  .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+  .col { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+  .col.final { border-color: var(--accent); }
+  .score { font: 500 0.75rem var(--mono); color: var(--muted); margin: 0 0 12px; }
+  ol { margin: 0; padding: 0; list-style: none; counter-reset: r; }
+  li { counter-increment: r; padding: 10px 0 10px 30px; border-top: 1px solid var(--line); position: relative; }
+  li::before { content: counter(r); position: absolute; left: 0; top: 10px; font: 500 0.75rem var(--mono); color: var(--muted); }
+  li b { font-weight: 500; }
+  li small { display: block; color: var(--muted); font-size: 0.8125rem; }
+  li p { margin: 6px 0 0; font-size: 0.875rem; }
+  .tag { font: 500 0.625rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; padding: 1px 5px; margin-left: 6px; vertical-align: 2px; }
+  .hit { color: var(--ok); border: 1px solid var(--ok); }
+  .miss { color: var(--muted); border: 1px solid var(--line); }
+  .note { color: var(--muted); font-size: 0.8125rem; margin-top: 28px; max-width: 76ch; }
+  .back { display: inline-block; margin-bottom: 28px; font-size: 0.875rem; }
+  @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } .col.final { order: -1; } }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../../index.html#projects">&larr; Back to projects</a>
+  <p class="label">koku &middot; replay</p>
+  <h1>Turkish perfume search</h1>
+  <p class="lede">Pick one of 183 Turkish evaluation queries. Left: an off-the-shelf multilingual embedder over the raw English perfume data. Right: the final system, a BGE-M3 fine-tuned on teacher-written queries over Turkish perfume text. Descriptions under each perfume were written by the distilled 0.6B student model. Everything was computed offline; this page only replays it.</p>
+  <div class="tools">
+    <select id="type" aria-label="Query type">
+      <option value="">All query types</option>
+      <option value="note">Note</option>
+      <option value="style">Style</option>
+      <option value="occasion">Occasion</option>
+    </select>
+    <input id="search" type="search" placeholder="Filter queries (e.g. kış, ofis, vanilya)" aria-label="Filter queries">
+    <select id="q" aria-label="Query" lang="tr"></select>
+  </div>
+  <div class="cols">
+    <section class="col"><h2>Zero-shot baseline</h2><p class="score" id="s-baseline"></p><ol id="baseline" lang="tr"></ol></section>
+    <section class="col final"><h2>koku</h2><p class="score" id="s-final"></p><ol id="final" lang="tr"></ol></section>
+  </div>
+  <p class="note">"Relevant" means the perfume satisfies the query's machine-checkable constraints (accords, notes, gender) in the evaluation set; it is strict, so a sensible pick can still show as a miss. Descriptions marked "held out" are for perfumes the student never saw in training. Data: Fragrantica dataset on Kaggle (CC BY-NC-SA 4.0). Code and full results: <a href="https://github.com/demirciberk/koku">github.com/demirciberk/koku</a>.</p>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let D;
+
+function fill() {
+  const t = $("type").value, s = $("search").value.toLocaleLowerCase("tr");
+  const qs = D.queries.filter((q) => (!t || q.t === t) && (!s || q.q.toLocaleLowerCase("tr").includes(s)));
+  const keep = $("q").value;
+  $("q").innerHTML = qs.map((q) => `<option value="${q.id}">${esc(q.q)}</option>`).join("") || "<option value=''>No matching query</option>";
+  if (qs.some((q) => q.id === keep)) $("q").value = keep;
+  show();
+}
+
+function list(key, q) {
+  const rows = q[key];
+  const hits = rows.filter(([, r]) => r).length;
+  $("s-" + key).textContent = `${hits} of 10 relevant`;
+  $(key).innerHTML = rows.map(([id, rel]) => {
+    const p = D.perfumes[id];
+    const tag = rel ? '<span class="tag hit" lang="en">relevant</span>' : '<span class="tag miss" lang="en">miss</span>';
+    const held = p.h ? ' <span class="tag miss" lang="en">held out</span>' : "";
+    const desc = p.d ? `<p>${esc(p.d)}${held}</p>` : "";
+    return `<li><b>${esc(p.n)}</b>${tag}<small>${esc(p.b)} &middot; ${esc(p.g)} &middot; ${esc(p.a.join(", "))}</small>${desc}</li>`;
+  }).join("");
+}
+
+function show() {
+  const q = D.queries.find((x) => x.id === $("q").value);
+  if (!q) { $("baseline").innerHTML = $("final").innerHTML = ""; $("s-baseline").textContent = $("s-final").textContent = ""; return; }
+  list("baseline", q);
+  list("final", q);
+}
+
+fetch("data.json").then((r) => r.json()).then((d) => {
+  D = d;
+  $("type").addEventListener("change", fill);
+  $("search").addEventListener("input", fill);
+  $("q").addEventListener("change", show);
+  fill();
+});
+</script>
+</body>
+</html>
