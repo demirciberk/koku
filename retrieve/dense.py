@@ -67,7 +67,7 @@ def load_model(model_id: str) -> SentenceTransformer:
 
 def run(name: str, docs_kind: str = "en", model_id: str | None = None) -> str:
     """Rank all eval queries. `model_id` overrides the MODELS entry (used for fine-tuned checkpoints)."""
-    mid, qp, dp = MODELS[name] if name in MODELS else (None, "", "")
+    mid, qp, dp = MODELS[name] if name in MODELS else MODELS["bge-m3"]  # unknown names = fine-tuned BGE-M3
     model = load_model(model_id or mid)
     tag = name if docs_kind == "en" else f"{name}-{docs_kind}"
 
@@ -97,6 +97,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("models", nargs="*", default=list(MODELS))
     ap.add_argument("--docs", choices=["en", "tr", "desc"], default="en")
+    ap.add_argument("--path", help="local checkpoint for a single model name (e.g. models/bge-m3-koku)")
     args = ap.parse_args()
     for n in args.models:
-        print("wrote", run(n, args.docs))
+        print("wrote", run(n, args.docs, args.path))
