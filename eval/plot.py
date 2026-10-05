@@ -16,12 +16,13 @@ sys.path.insert(0, "retrieve")
 from evaluate import evaluate, load  # noqa: E402
 
 # Runs shown, in order. Missing run files are skipped so the chart grows with the project.
+# The e5 runs stay in the README table; the chart keeps five bars per group to stay readable.
 RUNS = [
     ("runs/popularity.jsonl", "Popularity"),
     ("runs/bm25.jsonl", "BM25"),
-    ("runs/dense-e5-small.jsonl", "multilingual-e5-small"),
-    ("runs/dense-e5-base.jsonl", "multilingual-e5-base"),
-    ("runs/dense-bge-m3.jsonl", "BGE-M3"),
+    ("runs/dense-bge-m3.jsonl", "BGE-M3, English docs"),
+    ("runs/dense-bge-m3-tr.jsonl", "BGE-M3, Turkish docs"),
+    ("runs/dense-bge-m3-desc.jsonl", "BGE-M3, + teacher description"),
 ]
 TYPES = [("note", "Note"), ("style", "Style"), ("occasion", "Occasion"), ("all", "All queries")]
 
