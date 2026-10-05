@@ -1,0 +1,26 @@
+[
+ {
+  "model": "f16",
+  "valid_json": 1.0,
+  "desc_with_foreign_note": 0.015,
+  "desc_f1_vs_teacher": 0.619,
+  "tokens_per_s_single_stream": 102.0,
+  "tokens_per_s_4_parallel": 370.7
+ },
+ {
+  "model": "q8_0",
+  "valid_json": 1.0,
+  "desc_with_foreign_note": 0.02,
+  "desc_f1_vs_teacher": 0.62,
+  "tokens_per_s_single_stream": 132.3,
+  "tokens_per_s_4_parallel": 496.6
+ },
+ {
+  "model": "q4_k_m",
+  "valid_json": 1.0,
+  "desc_with_foreign_note": 0.025,
+  "desc_f1_vs_teacher": 0.592,
+  "tokens_per_s_single_stream": 136.8,
+  "tokens_per_s_4_parallel": 524.4
+ }
+]
