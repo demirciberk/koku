@@ -1,0 +1,35 @@
+{
+ "n": 200,
+ "valid_json": 1.0,
+ "desc_with_foreign_note": 0.02,
+ "tokens_per_s": 135.7,
+ "samples": [
+  {
+   "id": 9859,
+   "description": "Truffle ve ylang-ylang ile başlayarak sıcak ve baharatlı bir koku ile açılır. Orkide ve baharatlarla orta notada meyve ve yasemin notaları ile canlanır. Mexikan karamel ve sandal ağacı ile biten tatlı ve odunsu bir koku. Güz ve kış aylarında iç mekânlarda rahatlatıcı bir his verir.",
+   "queries": {
+    "note": "truffle ve ylang-ylang ile başlayıp mexikan karamel ile sona eren tatlı bir kadın parfümü",
+    "style": "sıcak ve tatlı, aynı zamanda biraz gizemli bir koku arıyorum",
+    "occasion": "kış günü evde kahve içmek için uygun bir parfüm"
+   }
+  },
+  {
+   "id": 15885,
+   "description": "Nane, yeşil elma ve limonla açılan, tonka fasulyesi ve ambroxanla canlanan ferah ve aromatik bir koku. Madagaskar vanilyası, virginian cedar ve atlas sediriyle sıcak ve huzurlu bir bitiş yapar. Gündüz ve hafif günler için idealdir.",
+   "queries": {
+    "note": "nane, yeşil elma ve tonka fasulyesiyle başlayıp vanilyalı bir koku",
+    "style": "hafif, enerjik ve doğal bir koku arıyorum",
+    "occasion": "gündüz dışarıda yürüyüş yaparken sürebileceğim bir parfüm"
+   }
+  },
+  {
+   "id": 4468,
+   "description": "Blood mandarin, greyfurt ve nane ile başlayarak sıcak ve baharatlı bir koku ile açılır. Tarçın ve baharatlı notalarla orta katmanda canlanır. Amber, deri ve odunsu notalarla sıcak, kuru ve klasik bir bitiş yapar. Gündüz ve akşam saatlerinde rahatlatıcı bir his verir.",
+   "queries": {
+    "note": "tarçınlı, baharatlı ve sıcak bir erkek parfümü",
+    "style": "kuru, klasik ve kendi kendine güvenen bir koku arıyorum",
+    "occasion": "gündüz saatlerinde kahve içmek için uygun bir parfüm"
+   }
+  }
+ ]
+}
