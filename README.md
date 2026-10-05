@@ -19,6 +19,7 @@ Fragrantica.com Fragrance Dataset (Kaggle, olgagmiufana1, v3, 2024-09-21), CC BY
 | Clean | `uv run --with pandas python clean.py` | `data/perfumes.jsonl` (24,063 perfumes) |
 | BM25 baseline | `python retrieve/bm25.py` | `runs/bm25.jsonl` |
 | Student SFT | `uv run python distill/sft.py` then `--eval base|tuned` | `models/qwen3-0.6b-koku`, `runs/sft-*.json` |
+| Export + bench GGUF | `uv run python distill/export.py && uv run python distill/bench.py` (needs `tools/llama-src`, llama.cpp b11393 sparse checkout) | `models/gguf/*.gguf`, `runs/gguf-bench.json` |
 | Retriever fine-tune | `uv run python retrieve/finetune.py` | `models/bge-m3-koku` |
 | Dense baselines | `uv run python retrieve/dense.py [--docs en\|tr\|desc]` | `runs/dense-*.jsonl` |
 | Teacher data | `uv run python distill/generate.py` (needs local llama-server, see script) | `data/teacher.jsonl` |
@@ -91,6 +92,18 @@ Held-out, 200 perfumes, greedy decoding:
 | Teacher (Qwen3-8B), same perfumes | 100% | 10.5% | ~24 per stream (llama.cpp) |
 
 The untuned 0.6B invents its own keys (`tanım`, `arama_sorgulari`) and fills queries with noise. After SFT the student follows the format every time and invents notes less often than its teacher, because it learned to stay close to the input list. It also inherits the teacher's repetitive occasion queries ("kış günü evde kahve içmek için..."), so query diversity is bounded by the teacher data. "Foreign note" only checks names from the translation table, so untranslated rare notes are not counted.
+
+### Quantization (llama.cpp)
+
+`distill/export.py` merges the LoRA adapter and exports GGUF (llama.cpp b11393 converter + `llama-quantize`). `distill/bench.py` serves each file with `llama-server` and reruns the 200 held-out perfumes with the training chat template, greedy decoding:
+
+| GGUF | Size | Valid JSON | Foreign note | Description F1 vs teacher | Tokens/s, 1 stream | Tokens/s, 4 parallel |
+|---|---|---|---|---|---|---|
+| f16 | 1,198 MB | 100% | 1.5% | 0.619 | 102 | 371 |
+| Q8_0 | 639 MB | 100% | 2.0% | 0.620 | 132 | 497 |
+| Q4_K_M | 397 MB | 100% | 2.5% | 0.592 | 137 | 524 |
+
+Q8_0 is lossless here (F1 0.619 to 0.620) at half the size and 1.3x the speed. Q4_K_M costs ~4% description F1 and one extra foreign note per 200 perfumes, for a third of the f16 size, which makes it the candidate for an in-browser build. Q8 and Q4 decode at nearly the same speed: at 0.6B parameters the GPU is limited by per-token overhead rather than weight bandwidth, so smaller weights stop paying off.
 
 Charts: `uv run python eval/plot.py`.
 
