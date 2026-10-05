@@ -2,6 +2,8 @@
 
 Turkish fragrance assistant: distilled small LM, fine-tuned retriever, in-browser demo.
 
+Türkçe: [README.tr.md](README.tr.md)
+
 **Live demo:** [demirciberk.com/demo/koku](https://demirciberk.com/demo/koku/) (replay of all 183 eval queries, baseline vs final system, with descriptions written by the distilled 0.6B student).
 
 ## Data
