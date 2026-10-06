@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>koku - How it was built - Berk Demirci</title>
+<meta name="description" content="How koku was built: a local 8B teacher writes Turkish training data, a retriever and a 0.6B student learn from it. Every number from a run file.">
+<meta name="theme-color" content="#FDF6D5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Instrument+Serif&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --bg: #FDF6D5; --surface: #FFFDF2; --line: #E0D7AC; --fg: #151313; --muted: #5C5A52; --accent: #8B2F2F;
+    --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 1.0625rem/1.7 var(--sans); }
+  main { max-width: 860px; margin: 0 auto; padding: clamp(40px, 7vw, 80px) 24px; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .back { display: inline-block; margin-bottom: 28px; font-size: 0.875rem; }
+  .label { font: 500 0.6875rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  h1 { font: 400 clamp(2.2rem, 6vw, 3.25rem)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 14px; }
+  h2 { font: 400 1.875rem/1.15 var(--serif); margin: 64px 0 10px; }
+  h2 span { font: 500 0.6875rem var(--mono); letter-spacing: 0.08em; color: var(--accent); display: block; margin-bottom: 8px; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .lede { color: var(--muted); font-size: 1.125rem; }
+  figure { margin: 22px 0 8px; background: #FBFAF7; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; }
+  figcaption { font-size: 0.8125rem; color: var(--muted); padding: 10px 16px; border-top: 1px solid var(--line); background: var(--surface); }
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; padding: 0; list-style: none; }
+  .stats li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .stats b { display: block; font: 400 2.25rem/1 var(--serif); }
+  .stats span { font-size: 0.8125rem; color: var(--muted); }
+  ul.plain { padding-left: 20px; max-width: 68ch; }
+  ul.plain li { margin-bottom: 8px; }
+  code { font: 500 0.8125rem var(--mono); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+  .cta a { font: 500 0.75rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--accent); border-radius: 999px; padding: 10px 18px; text-decoration: none; }
+  .cta a:hover { background: var(--accent); color: var(--surface); }
+  @media (max-width: 640px) { .stats { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../../index.html#projects">&larr; Back to projects</a>
+  <p class="label">koku &middot; how it was built</p>
+  <h1>A Turkish perfume assistant, distilled on one laptop GPU</h1>
+  <p class="lede">The perfume data is in English; people search in Turkish, and mostly by feeling ("something for a first date") rather than by note. koku closes that gap with one local teacher model that writes Turkish training data, and two small models that learn from it. No API keys, no cloud GPU: an RTX 4060 with 8 GB.</p>
+  <ul class="stats">
+    <li><b>0.18 &rarr; 0.48</b><span>nDCG@10 on 183 Turkish queries</span></li>
+    <li><b>0% &rarr; 100%</b><span>valid output from the 0.6B student</span></li>
+    <li><b>397 MB</b><span>quantized student, 137 tokens/s</span></li>
+  </ul>
+
+  <h2><span>01 / Pipeline</span>One teacher, two students</h2>
+  <p>Qwen3-8B runs locally through llama.cpp and writes, for every perfume, a short Turkish description and three Turkish search queries: one about notes, one about style, one only about the occasion or feeling. A rule-based filter drops bad rows. The clean data trains a retriever (which perfume matches this query) and a small language model (describe this perfume in Turkish).</p>
+  <figure><img src="assets/pipeline.png" alt="Pipeline diagram: data, teacher, QA filter, then retriever and student in parallel, quantization, and the demo." loading="lazy" width="2400" height="1080"><figcaption>Every number in the diagram is read from a run file by <code>eval/figures.py</code>.</figcaption></figure>
+
+  <h2><span>02 / Evaluation first</span>Measure before training anything</h2>
+  <p>Before any model, I wrote 183 Turkish queries and gave each one machine-checkable constraints (accords, notes, gender) instead of hand-picked answers, so relevance is reproducible. The retriever only ever sees the query text; a test guards that. Keyword search barely works: most Turkish queries share no word with the English data.</p>
+  <figure><img src="assets/vocab-gap.png" alt="Bar chart: most Turkish queries share no token with the English perfume data." loading="lazy" width="2200" height="720"><figcaption>BM25 falls back to the popularity ranking for these queries.</figcaption></figure>
+
+  <h2><span>03 / Synthetic data</span>The teacher, and what had to be fixed</h2>
+  <p>Two pilot runs showed real problems. The teacher mistranslated note names (peony became "pony") and invented notes, so it now receives Turkish names from a fixed 300-note table. A third of its occasion queries started with the same phrase, so each perfume gets one of six angles (a moment, a gift, a feeling, a place, something to avoid, a routine). The full run took 6.4 hours with zero malformed outputs; the filter then removed 498 rows.</p>
+  <figure><img src="assets/teacher-qa.png" alt="Bar chart: 13,718 rows generated, 498 dropped by three rules, 13,220 kept." loading="lazy" width="2200" height="840"><figcaption>Rows are counted under the first rule they fail, so the drops add up.</figcaption></figure>
+
+  <h2><span>04 / Retrieval</span>Where the gains came from</h2>
+  <p>The biggest single step was not a model at all: translating note and accord names into Turkish doubled the score. Adding the teacher's description to each perfume added 19%, and fine-tuning BGE-M3 on 37,677 teacher query-perfume pairs added another 12%.</p>
+  <figure><img src="assets/progression.png" alt="Bar chart of nDCG@10: popularity .013, BM25 .048, BGE-M3 .180, Turkish note names .359, teacher description .426, fine-tuning .477." loading="lazy" width="2200" height="1040"><figcaption>Each bar adds one change to the previous one.</figcaption></figure>
+  <figure><img src="assets/results.png" alt="Grouped bar chart of nDCG@10 per query type: note, style, occasion, all." loading="lazy" width="2200" height="1120"><figcaption>Occasion queries remain the weak spot: fine-tuning did not move them (0.165 to 0.164).</figcaption></figure>
+  <p>That last result is the honest headline: the teacher's occasion queries were repetitive, so the retriever had little new to learn about situations. More varied occasion data is the next lever, not more epochs.</p>
+
+  <h2><span>05 / Distillation</span>From 8B to 0.6B</h2>
+  <p>Qwen3-0.6B was trained with LoRA to reproduce the teacher's output (sequence-level distillation, about 45 minutes). On 200 perfumes it never saw, the untuned model produced no usable output; the trained one follows the format every time and invents fewer notes than its teacher, because it learned to stay close to the input list.</p>
+  <figure><img src="assets/student.png" alt="Two bar charts: valid JSON 0% untuned, 100% after training, 100% teacher; foreign notes 2% student versus 10.5% teacher." loading="lazy" width="2200" height="960"><figcaption>"Foreign note" only checks note names in the translation table.</figcaption></figure>
+
+  <h2><span>06 / Inference</span>Quantizing for the browser</h2>
+  <p>The merged student was converted to GGUF and quantized. Q8_0 loses nothing; Q4_K_M is a third of the size for about 4% lower agreement with the teacher. At this model size Q8 and Q4 run at nearly the same speed, so smaller weights stop paying off.</p>
+  <figure><img src="assets/quantization.png" alt="Three bar charts comparing F16, Q8_0 and Q4_K_M on size, F1 against the teacher, and tokens per second." loading="lazy" width="2200" height="880"><figcaption>Measured with llama-server on the same 200 held-out perfumes.</figcaption></figure>
+
+  <h2><span>07 / Limits</span>What is not solved</h2>
+  <ul class="plain">
+    <li>The evaluation queries were drafted with an LLM and have not been reviewed by a person yet.</li>
+    <li>Occasion labels map feelings to accords by judgement; they are the least objective part of the set.</li>
+    <li>The student inherits the teacher's repetitive occasion phrasing.</li>
+  </ul>
+
+  <div class="cta">
+    <a href="index.html">Try the search replay</a>
+    <a href="https://github.com/demirciberk/koku">Code and full results</a>
+  </div>
+</main>
+</body>
+</html>

@@ -6,6 +6,10 @@ Türkçe parfüm asistanı: yerel bir öğretmen modelden damıtılmış küçü
 
 English: [README.md](README.md)
 
+![koku nasıl kuruldu](assets/pipeline.png)
+
+Tüm grafiklerin anlatıldığı sayfa (İngilizce): [demirciberk.com/demo/koku/pipeline.html](https://demirciberk.com/demo/koku/pipeline.html)
+
 ## Özet
 
 | Adım | Sonuç |
@@ -17,7 +21,11 @@ English: [README.md](README.md)
 | Öğrenci | Qwen3-0.6B + LoRA: geçerli JSON %0'dan %100'e, uydurma nota oranı %2 (öğretmen %10,5) |
 | Sıkıştırma | Q8_0 kayıpsız (639 MB); Q4_K_M %4 F1 kaybıyla 397 MB, tek akışta 137 token/sn |
 
+![Kazançlar nereden geldi](assets/progression.png)
+
 ![Sorgu tipine göre arama kalitesi](assets/results.png)
+
+![0.6B öğrenci ve 8B öğretmen](assets/student.png)
 
 ## Ne öğrendim
 
