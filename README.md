@@ -6,6 +6,10 @@ Türkçe: [README.tr.md](README.tr.md)
 
 **Live demo:** [demirciberk.com/demo/koku](https://demirciberk.com/demo/koku/) (replay of all 183 eval queries, baseline vs final system, with descriptions written by the distilled 0.6B student).
 
+![How koku is built](assets/pipeline.png)
+
+How it was built, with every figure explained: [demirciberk.com/demo/koku/pipeline.html](https://demirciberk.com/demo/koku/pipeline.html)
+
 ## Data
 
 Fragrantica.com Fragrance Dataset (Kaggle, olgagmiufana1, v3, 2024-09-21), CC BY-NC-SA 4.0. Non-commercial; derived models and data are shared under the same license.
@@ -29,7 +33,7 @@ Fragrantica.com Fragrance Dataset (Kaggle, olgagmiufana1, v3, 2024-09-21), CC BY
 | Teacher data | `uv run python distill/generate.py` (needs local llama-server, see script) | `data/teacher.jsonl` |
 | Teacher QA | `uv run python distill/check.py --write` | `data/teacher.clean.jsonl` |
 | Demo data | `uv run python demo/build.py` (Q4_K_M student via llama-server) | `demo/data.json` |
-| Charts | `uv run python eval/plot.py` | `assets/*.png` |
+| Charts | `uv run python eval/plot.py && uv run python eval/figures.py` | `assets/*.png` |
 
 `fra_cleaned.csv` is `;`-separated, decimal comma, cp1252-encoded (`0x99` = ™, `0x92` = ’). Cleaning lowercases notes, strips ®/™, dedupes notes per tier, and title-cases name/brand slugs.
 
@@ -67,6 +71,8 @@ nDCG@10 per query type (`uv run python eval/evaluate.py runs/<run>.jsonl` prints
 
 BM25 only helps where a Turkish query shares a token with the English perfume text (e.g. "bergamot", "iris", "neroli"): 137 of 183 queries share none and fall back to the popularity ranking. Off-the-shelf multilingual embedders close the language gap (BGE-M3 is 3.8x BM25 overall), but occasion queries stay weakest: mapping "fireplace" or "first date" to accords is what a fine-tuned retriever has to learn.
 
+![Where the gains came from](assets/progression.png)
+
 ### Document expansion
 
 Two cheap changes to the perfume side, with no model training:
@@ -86,6 +92,8 @@ Occasion queries are still far behind note and style queries.
 
 ## Distilled student LM
 
+![Teacher data, before and after QA](assets/teacher-qa.png)
+
 `distill/sft.py` distils the teacher (Qwen3-8B, Q4_K_M) into Qwen3-0.6B with LoRA (r=16, all projection layers, 10M trainable parameters) by sequence-level SFT: input is the perfume's Turkish fields, target is the teacher's JSON (description + three queries). Loss on the answer tokens only. One epoch over 12,559 perfumes, ~45 minutes on an RTX 4060. The same 5% held-out perfumes as the retriever are never trained on.
 
 Held-out, 200 perfumes, greedy decoding:
@@ -98,7 +106,11 @@ Held-out, 200 perfumes, greedy decoding:
 
 The untuned 0.6B invents its own keys (`tanım`, `arama_sorgulari`) and fills queries with noise. After SFT the student follows the format every time and invents notes less often than its teacher, because it learned to stay close to the input list. It also inherits the teacher's repetitive occasion queries ("kış günü evde kahve içmek için..."), so query diversity is bounded by the teacher data. "Foreign note" only checks names from the translation table, so untranslated rare notes are not counted.
 
+![Distilling 8B into 0.6B](assets/student.png)
+
 ### Quantization (llama.cpp)
+
+![Quantizing the student](assets/quantization.png)
 
 `distill/export.py` merges the LoRA adapter and exports GGUF (llama.cpp b11393 converter + `llama-quantize`). `distill/bench.py` serves each file with `llama-server` and reruns the 200 held-out perfumes with the training chat template, greedy decoding:
 
