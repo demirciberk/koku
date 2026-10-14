@@ -18,7 +18,7 @@ sys.path.insert(0, "eval")
 sys.path.insert(0, "retrieve")
 sys.path.insert(0, "distill")
 from evaluate import evaluate, load  # noqa: E402
-from plot import BG, INK, MUTED, RULE, SHADES, fonts, style  # noqa: E402
+from plot import BG, INK, MUTED, OUT, PINK, RULE, SHADES, fonts, style  # noqa: E402
 
 ACCENT = SHADES[-1]
 SERIF, SANS = fonts()
@@ -34,12 +34,12 @@ def ndcg(path: str) -> float:
 
 
 def header(fig, title: str, sub: str, top: float = 0.95) -> None:
-    fig.text(0.04, top, title, family=SERIF, fontsize=22, color=INK, va="top")
+    fig.text(0.04, top, title, family=SERIF, fontsize=22, weight="bold", color=INK, va="top")
     fig.text(0.04, top - 0.085, sub, family=SANS, fontsize=10.5, color=MUTED, va="top")
 
 
 def save(fig, name: str) -> str:
-    out = f"assets/{name}.png"
+    out = f"{OUT}/{name}.png"
     fig.savefig(out, facecolor=BG)
     plt.close(fig)
     return out
@@ -69,8 +69,8 @@ def pipeline() -> str:
     def box(x, y, title, lines, accent=False):
         ax.add_patch(FancyBboxPatch((x, y - H / 2), W, H, boxstyle="round,pad=0,rounding_size=0.012",
                                     linewidth=1.2 if accent else 1, edgecolor=ACCENT if accent else RULE,
-                                    facecolor="#FFFDF8"))
-        ax.text(x + 0.012, y + H / 2 - 0.045, title, family=SERIF, fontsize=14, color=INK, va="top")
+                                    facecolor=BG))
+        ax.text(x + 0.012, y + H / 2 - 0.045, title, family=SERIF, fontsize=14, weight="bold", color=INK, va="top")
         ax.text(x + 0.012, y + H / 2 - 0.125, "\n".join(lines), family=SANS, fontsize=8.6, color=MUTED, va="top", linespacing=1.45)
 
     def arrow(a, b):
@@ -111,7 +111,7 @@ def progression() -> str:
                 family=SANS, fontsize=10, color=INK if i == len(vals) - 1 else MUTED)
         if i >= 3:
             ax.text(b.get_x() + b.get_width() / 2, v / 2, f"+{(v / vals[i - 1] - 1):.0%}", ha="center", va="center",
-                    family=SANS, fontsize=9, color="#FFFDF8")
+                    family=SANS, fontsize=9, color=BG)
     style(ax)
     ax.set_xticks(range(len(steps)), [s for s, _ in steps], family=SANS, fontsize=10, color=INK)
     ax.set_ylabel("nDCG@10, all queries", family=SANS, color=MUTED, fontsize=10)
@@ -142,7 +142,7 @@ def teacher_qa() -> str:
     fig, ax = plt.subplots(figsize=(11, 4.2), dpi=200)
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
-    colors = [SHADES[2], "#E9D9D6", "#E9D9D6", "#E9D9D6", ACCENT]
+    colors = [SHADES[2], PINK, PINK, PINK, ACCENT]
     ax.barh(range(len(vals)), vals, 0.6, color=colors, zorder=3)
     for y, v in enumerate(vals):
         ax.text(v + 120, y, f"{v:,}", va="center", family=SANS, fontsize=10, color=INK)
@@ -213,6 +213,6 @@ def quantization() -> str:
 
 
 if __name__ == "__main__":
-    os.makedirs("assets", exist_ok=True)
+    os.makedirs(OUT, exist_ok=True)
     for f in (pipeline, progression, teacher_qa, student, quantization):
         print("wrote", f())
