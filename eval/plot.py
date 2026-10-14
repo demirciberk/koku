@@ -26,16 +26,19 @@ RUNS = [
 ]
 TYPES = [("note", "Note"), ("style", "Style"), ("occasion", "Occasion"), ("all", "All queries")]
 
-INK, MUTED, RULE, BG = "#1A1A1A", "#77746E", "#E4E1DA", "#FBFAF7"
-# Older/weaker runs fade into the background; the newest run carries the accent.
-SHADES = ["#D9D5CC", "#B9B3A7", "#8C8579", "#5E584E", "#9F2F2D"]
+# "Electric on white" palette: white ground, ink text, cobalt for the newest run, pink for what failed.
+INK, MUTED, RULE, BG = "#0B0B0F", "#4A4A55", "#E3E4EA", "#FFFFFF"
+# Older/weaker runs fade into gray; the newest run carries the cobalt accent.
+SHADES = ["#D5D7DE", "#B8BAC4", "#8B8D99", "#4A4A55", "#2D5BFF"]
+PINK = "#FF3D7F"
+# Output directory; override with FIG_OUT to keep tracked README images untouched.
+OUT = os.environ.get("FIG_OUT", "assets")
 
 
 def fonts() -> tuple[str, str]:
     have = {f.name for f in font_manager.fontManager.ttflist}
-    serif = next((f for f in ("Instrument Serif", "Georgia", "DejaVu Serif") if f in have), "serif")
     sans = next((f for f in ("Geist", "Segoe UI", "Helvetica Neue", "DejaVu Sans") if f in have), "sans-serif")
-    return serif, sans
+    return sans, sans  # titles use the same sans, set in bold at the call sites
 
 
 def style(ax) -> None:
@@ -73,12 +76,12 @@ def results_chart(serif: str, sans: str) -> str:
                     bbox_to_anchor=(0, 1.02), handlelength=1.2, columnspacing=1.6)
     for t in leg.get_texts():
         t.set_color(INK)
-    fig.text(0.06, 0.965, "Retrieval quality by query type", family=serif, fontsize=22, color=INK, va="top")
+    fig.text(0.06, 0.965, "Retrieval quality by query type", family=serif, fontsize=22, weight="bold", color=INK, va="top")
     fig.text(0.06, 0.885, "183 Turkish queries over 13,718 perfumes. Higher is better.", family=sans,
              fontsize=10.5, color=MUTED, va="top")
     fig.subplots_adjust(left=0.06, right=0.98, top=0.76, bottom=0.09)
-    os.makedirs("assets", exist_ok=True)
-    out = "assets/results.png"
+    os.makedirs(OUT, exist_ok=True)
+    out = f"{OUT}/results.png"
     fig.savefig(out, facecolor=BG)
     plt.close(fig)
     return out
@@ -101,10 +104,10 @@ def vocab_chart(serif: str, sans: str) -> str:
     totals = [sum(counts[k]) for k, _ in TYPES[:3]]
     share = [counts[k][0] / t * 100 for (k, _), t in zip(TYPES[:3], totals)]
     none = [counts[k][1] / t * 100 for (k, _), t in zip(TYPES[:3], totals)]
-    ax.barh(labels, share, color="#5E584E", height=0.56, zorder=3, label="shares at least one token")
-    ax.barh(labels, none, left=share, color="#E9D9D6", height=0.56, zorder=3, label="shares no token (BM25 falls back to popularity)")
+    ax.barh(labels, share, color=SHADES[3], height=0.56, zorder=3, label="shares at least one token")
+    ax.barh(labels, none, left=share, color=PINK, height=0.56, zorder=3, label="shares no token (BM25 falls back to popularity)")
     for y, (k, _) in enumerate(TYPES[:3]):
-        ax.text(101.5, y, f"{counts[k][1]} of {totals[y]}  ({none[y]:.0f}%)", va="center", family=sans, fontsize=10, color="#9F2F2D")
+        ax.text(101.5, y, f"{counts[k][1]} of {totals[y]}  ({none[y]:.0f}%)", va="center", family=sans, fontsize=10, color=INK, weight="bold")
     ax.set_xlim(0, 100)
     for s in ("top", "right", "left", "bottom"):
         ax.spines[s].set_visible(False)
@@ -117,11 +120,12 @@ def vocab_chart(serif: str, sans: str) -> str:
     for t in leg.get_texts():
         t.set_color(INK)
     total = sum(counts[k][1] for k, _ in TYPES[:3])
-    fig.text(0.06, 0.95, "Why keyword search fails here", family=serif, fontsize=22, color=INK, va="top")
+    fig.text(0.06, 0.95, "Why keyword search fails here", family=serif, fontsize=22, weight="bold", color=INK, va="top")
     fig.text(0.06, 0.80, f"{total} of {sum(totals)} Turkish queries share no word with the English perfume data.",
              family=sans, fontsize=10.5, color=MUTED, va="top")
     fig.subplots_adjust(left=0.1, right=0.84, top=0.58, bottom=0.05)
-    out = "assets/vocab-gap.png"
+    os.makedirs(OUT, exist_ok=True)
+    out = f"{OUT}/vocab-gap.png"
     fig.savefig(out, facecolor=BG)
     plt.close(fig)
     return out
